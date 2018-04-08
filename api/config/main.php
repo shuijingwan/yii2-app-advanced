@@ -17,8 +17,9 @@ return [
         ],
         'user' => [
             'identityClass' => 'api\models\User',
-            'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-api', 'httpOnly' => true],
+            'enableSession' => false,
+            'loginUrl' => null,
+            'enableAutoLogin' => false,
         ],
         'session' => [
             // this is the name of the session cookie used for login on the api
@@ -36,14 +37,33 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
+        'urlManager' => require __DIR__ . '/urlManager.php',
+        'response' => [
+            'format' => yii\web\Response::FORMAT_JSON,
+        ],
+        'i18n' => [
+            'translations' => [
+                'model/*'=> [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'forceTranslation' => true,
+                    'basePath'=>'@common/messages',
+                    'fileMap'=>[
+                    ],
+                ],
+                '*'=> [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'forceTranslation' => true,
+                    'basePath'=>'@api/messages',
+                    'fileMap'=>[
+                    ],
+                ],
             ],
         ],
-        */
+    ],
+    'modules' => [
+        'v1' => [
+            'class' => api\modules\v1\Module::class,
+        ],
     ],
     'params' => $params,
 ];
