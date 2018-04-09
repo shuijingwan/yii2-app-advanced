@@ -34,9 +34,6 @@ return [
                 ],
             ],
         ],
-        'errorHandler' => [
-            'errorAction' => 'site/error',
-        ],
         'urlManager' => require __DIR__ . '/urlManager.php',
         'response' => [
             'format' => yii\web\Response::FORMAT_JSON,
