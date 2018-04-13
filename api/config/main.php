@@ -11,6 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'api\controllers',
+    'version' => '1.0.0',
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-api',
