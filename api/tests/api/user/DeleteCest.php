@@ -35,6 +35,7 @@ class DeleteCest
     {
         $id = 1;
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendDELETE('/users/' . $id);
         $I->seeResponseCodeIs(HttpCode::OK); // 200
         $I->seeResponseIsJson();
@@ -53,6 +54,7 @@ class DeleteCest
     {
         $id = 1;
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendDELETE('/users/' . $id);
         $I->seeResponseCodeIs(HttpCode::OK); // 200
         $I->seeResponseIsXml();
@@ -69,6 +71,7 @@ class DeleteCest
     {
         $id = 9999;
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendDELETE('/users/' . $id);
         $I->seeResponseCodeIs(HttpCode::NOT_FOUND); // 404
         $I->seeResponseIsJson();
@@ -87,6 +90,7 @@ class DeleteCest
     {
         $id = 9999;
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendDELETE('/users/' . $id);
         $I->seeResponseCodeIs(HttpCode::NOT_FOUND); // 404
         $I->seeResponseIsXml();

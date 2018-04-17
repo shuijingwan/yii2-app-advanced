@@ -34,6 +34,7 @@ class IndexCest
     public function indexIsJson(ApiTester $I)
     {
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendGET('/users');
         $I->seeResponseCodeIs(HttpCode::OK); // 200
         $I->seeResponseIsJson();
@@ -55,6 +56,7 @@ class IndexCest
     public function indexIsXml(ApiTester $I)
     {
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendGET('/users');
         $I->seeResponseCodeIs(HttpCode::OK); // 200
         $I->seeResponseIsXml();

@@ -40,6 +40,7 @@ class UpdateCest
             'status' => 0,
         ];
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPUT('/users/' . $id, $data);
         $I->seeResponseCodeIs(HttpCode::OK); // 200
         $I->seeResponseIsJson();
@@ -70,6 +71,7 @@ class UpdateCest
             'status' => 0,
         ];
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPUT('/users/' . $id, $data);
         $I->seeResponseCodeIs(HttpCode::OK); // 200
         $I->seeResponseIsXml();
@@ -96,6 +98,7 @@ class UpdateCest
             'status' => 0,
         ];
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPUT('/users/' . $id, $data);
         $I->seeResponseCodeIs(HttpCode::NOT_FOUND); // 404
         $I->seeResponseIsJson();
@@ -117,6 +120,7 @@ class UpdateCest
             'status' => 0,
         ];
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPUT('/users/' . $id, $data);
         $I->seeResponseCodeIs(HttpCode::NOT_FOUND); // 404
         $I->seeResponseIsXml();
@@ -134,6 +138,7 @@ class UpdateCest
         $id = 1;
         $data = [];
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPUT('/users/' . $id, $data);
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY); // 422
         $I->seeResponseIsJson();
@@ -151,6 +156,7 @@ class UpdateCest
         $id = 1;
         $data = [];
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPUT('/users/' . $id, $data);
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY); // 422
         $I->seeResponseIsXml();
@@ -172,6 +178,7 @@ class UpdateCest
             'status' => 0,
         ];
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPUT('/users/' . $id, $data);
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY); // 422
         $I->seeResponseIsJson();
@@ -193,6 +200,7 @@ class UpdateCest
             'status' => 0,
         ];
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPUT('/users/' . $id, $data);
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY); // 422
         $I->seeResponseIsXml();
@@ -214,6 +222,7 @@ class UpdateCest
             'status' => 0,
         ];
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPUT('/users/' . $id, $data);
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY); // 422
         $I->seeResponseIsJson();
@@ -235,6 +244,7 @@ class UpdateCest
             'status' => 0,
         ];
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPUT('/users/' . $id, $data);
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY); // 422
         $I->seeResponseIsXml();
@@ -256,6 +266,7 @@ class UpdateCest
             'status' => 5,
         ];
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPUT('/users/' . $id, $data);
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY); // 422
         $I->seeResponseIsJson();
@@ -277,6 +288,7 @@ class UpdateCest
             'status' => 5,
         ];
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPUT('/users/' . $id, $data);
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY); // 422
         $I->seeResponseIsXml();

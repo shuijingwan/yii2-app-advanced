@@ -20,6 +20,7 @@ class IndexEmptyCest
     public function indexIsJson(ApiTester $I)
     {
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendGET('/users');
         $I->seeResponseCodeIs(HttpCode::OK); // 200
         $I->seeResponseIsJson();
@@ -37,6 +38,7 @@ class IndexEmptyCest
     public function indexIsXml(ApiTester $I)
     {
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendGET('/users');
         $I->seeResponseCodeIs(HttpCode::OK); // 200
         $I->seeResponseIsXml();

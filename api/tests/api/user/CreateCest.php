@@ -39,6 +39,7 @@ class CreateCest
             'password' => '111111',
         ];
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPOST('/users', $data);
         $I->seeResponseCodeIs(HttpCode::CREATED); // 201
         $I->seeResponseIsJson();
@@ -68,6 +69,7 @@ class CreateCest
             'password' => '111111',
         ];
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPOST('/users', $data);
         $I->seeResponseCodeIs(HttpCode::CREATED); // 201
         $I->seeResponseIsXml();
@@ -89,6 +91,7 @@ class CreateCest
     {
         $data = [];
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPOST('/users', $data);
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY); // 422
         $I->seeResponseIsJson();
@@ -105,6 +108,7 @@ class CreateCest
     {
         $data = [];
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPOST('/users', $data);
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY); // 422
         $I->seeResponseIsXml();
@@ -125,6 +129,7 @@ class CreateCest
             'password' => '111111',
         ];
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPOST('/users', $data);
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY); // 422
         $I->seeResponseIsJson();
@@ -145,6 +150,7 @@ class CreateCest
             'password' => '111111',
         ];
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPOST('/users', $data);
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY); // 422
         $I->seeResponseIsXml();
@@ -165,6 +171,7 @@ class CreateCest
             'password' => 'some_password',
         ];
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPOST('/users', $data);
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY); // 422
         $I->seeResponseIsJson();
@@ -185,6 +192,7 @@ class CreateCest
             'password' => 'some_password',
         ];
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendPOST('/users', $data);
         $I->seeResponseCodeIs(HttpCode::UNPROCESSABLE_ENTITY); // 422
         $I->seeResponseIsXml();

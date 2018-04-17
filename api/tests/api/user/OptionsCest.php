@@ -34,6 +34,7 @@ class OptionsCest
     public function optionsIsJson(ApiTester $I)
     {
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendOPTIONS('/users');
         $I->seeResponseCodeIs(HttpCode::OK); // 200
         // 检查响应的数据
@@ -45,6 +46,7 @@ class OptionsCest
     public function optionsIsXml(ApiTester $I)
     {
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendOPTIONS('/users');
         $I->seeResponseCodeIs(HttpCode::OK); // 200
         // 检查响应的数据
@@ -57,6 +59,7 @@ class OptionsCest
     {
         $id = 1;
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendOPTIONS('/users/' . $id);
         $I->seeResponseCodeIs(HttpCode::OK); // 200
         // 检查响应的数据
@@ -69,6 +72,7 @@ class OptionsCest
     {
         $id = 1;
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
+        $I->haveHttpHeader('Accept-Language', 'en-US');
         $I->sendOPTIONS('/users/' . $id);
         $I->seeResponseCodeIs(HttpCode::OK); // 200
         // 检查响应的数据
