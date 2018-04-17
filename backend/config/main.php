@@ -10,7 +10,7 @@ return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'contentNegotiator'],
     'modules' => [],
     'components' => [
         'request' => [
@@ -36,6 +36,13 @@ return [
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
+        ],
+        'contentNegotiator' => [
+            'class' => 'yii\filters\ContentNegotiator',
+            'languages' => [
+                'zh-CN',
+                'en-US',
+            ],
         ],
         /*
         'urlManager' => [

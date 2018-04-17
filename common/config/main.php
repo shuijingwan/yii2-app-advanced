@@ -5,7 +5,6 @@ return [
         '@npm'   => '@vendor/npm-asset',
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
-    'bootstrap' => ['contentNegotiator'],
     'components' => [
         'i18n' => [
             'translations' => [
@@ -19,13 +18,6 @@ return [
                         'success' => 'success.php',
                     ],
                 ],
-            ],
-        ],
-        'contentNegotiator' => [
-            'class' => 'yii\filters\ContentNegotiator',
-            'languages' => [
-                'zh-CN',
-                'en-US',
             ],
         ],
         'cache' => [

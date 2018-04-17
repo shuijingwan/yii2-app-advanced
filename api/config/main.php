@@ -9,7 +9,7 @@ $params = array_merge(
 return [
     'id' => 'app-api',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'contentNegotiator'],
     'controllerNamespace' => 'api\controllers',
     'version' => '1.0.0',
     'components' => [
@@ -55,6 +55,13 @@ return [
                     'fileMap'=>[
                     ],
                 ],
+            ],
+        ],
+        'contentNegotiator' => [
+            'class' => 'yii\filters\ContentNegotiator',
+            'languages' => [
+                'zh-CN',
+                'en-US',
             ],
         ],
     ],
