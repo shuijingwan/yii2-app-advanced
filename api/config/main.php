@@ -36,9 +36,6 @@ return [
             ],
         ],
         'urlManager' => require __DIR__ . '/urlManager.php',
-        'response' => [
-            'format' => yii\web\Response::FORMAT_JSON,
-        ],
         'i18n' => [
             'translations' => [
                 'model/*'=> [
@@ -59,6 +56,10 @@ return [
         ],
         'contentNegotiator' => [
             'class' => 'yii\filters\ContentNegotiator',
+            'formats' => [
+                'application/json' => yii\web\Response::FORMAT_JSON,
+                'application/xml' => yii\web\Response::FORMAT_XML,
+            ],
             'languages' => [
                 'en-US',
                 'zh-CN',
