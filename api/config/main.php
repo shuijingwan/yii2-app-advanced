@@ -29,10 +29,23 @@ return [
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
-                [
+                'file' => [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
+                'db' => [
+                    'class' => 'yii\log\DbTarget',
+                    'categories' => [
+                        'api\behaviors\RequestLogBehavior::beforeRequest',
+                    ],
+                    'prefix' => function () {
+                        $url = !Yii::$app->request->isConsoleRequest ? Yii::$app->request->getUrl() : null;
+                        $user = Yii::$app->has('user', true) ? Yii::$app->get('user') : null;
+                        $userId = $user ? $user->getId(false) : '-';
+                        return sprintf('[%s][%s][%s]', Yii::$app->id, $url, $userId);
+                    },
+                    'logVars' => [],
+                ]
             ],
         ],
         'urlManager' => require __DIR__ . '/urlManager.php',
@@ -65,6 +78,9 @@ return [
                 'zh-CN',
             ],
         ],
+    ],
+    'as requestLog' => [
+        'class' => api\behaviors\RequestLogBehavior::class,
     ],
     'modules' => [
         'v1' => [
