@@ -24,7 +24,7 @@ class RequestLogBehavior extends Behavior
      */
     public function beforeRequest($event)
     {
-        $url = !Yii::$app->request->isConsoleRequest ? Yii::$app->request->getUrl() : null;
+        $url = !Yii::$app->request->isConsoleRequest ? Yii::$app->request->getUrl() : '';
         $requestQueryParams = Yii::$app->getRequest()->getQueryParams();
         $requestBodyParams = Yii::$app->getRequest()->getBodyParams();
         $user = Yii::$app->has('user', true) ? Yii::$app->get('user') : null;

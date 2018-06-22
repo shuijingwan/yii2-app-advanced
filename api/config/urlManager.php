@@ -9,5 +9,10 @@ return [
             'class' => 'yii\rest\UrlRule',
             'controller' => ['v1/user'],
         ],
+        [
+            'class' => 'yii\rest\UrlRule',
+            'controller' => ['v1/log'],
+            'only' => ['index', 'view'],
+        ],
     ],
 ];

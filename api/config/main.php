@@ -67,6 +67,17 @@ return [
                 ],
             ],
         ],
+        'response' => [
+            'formatters' => [
+                yii\web\Response::FORMAT_JSON => [
+                    'class' => 'yii\web\JsonResponseFormatter',
+                    'encodeOptions' => 336,
+                ],
+                yii\web\Response::FORMAT_XML => [
+                    'class' => 'yii\web\XmlResponseFormatter',
+                ],
+            ],
+        ],
         'contentNegotiator' => [
             'class' => 'yii\filters\ContentNegotiator',
             'formats' => [
