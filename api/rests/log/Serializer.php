@@ -57,9 +57,15 @@ class Serializer extends \yii\rest\Serializer
         }
 
         foreach ($result['items'] as $key => $item) {
-            $result['items'][$key]['message'] = unserialize($item['message']);
+            $result['items'][$key]['message'] = $item['message'] = unserialize($item['message']);
             if (empty($item['message']['userId'])) {
                 $result['items'][$key]['message']['userId'] = '0';
+            }
+            if (empty($item['message']['requestQueryParams'])) {
+                $result['items'][$key]['message']['requestQueryParams'] = (object)[];
+            }
+            if (empty($item['message']['requestBodyParams'])) {
+                $result['items'][$key]['message']['requestBodyParams'] = (object)[];
             }
         }
 
