@@ -16,7 +16,9 @@ class m180620_105204_update_table_options_to_log extends Migration
         if ($this->db->driverName === 'mysql') {
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
             $tableOptions = 'CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE=InnoDB';
+            $this->execute('ALTER TABLE {{%user}} ROW_FORMAT=DYNAMIC');
             $this->execute('ALTER TABLE {{%user}} CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci');
+            $this->execute('ALTER TABLE {{%log}} ROW_FORMAT=DYNAMIC');
             $this->execute('ALTER TABLE {{%log}} CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci');
         }
 
