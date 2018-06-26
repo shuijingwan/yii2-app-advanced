@@ -32,8 +32,8 @@ class ViewAction extends Action
         }
 
         $model->message = $message = unserialize($model->message);
-        if (empty($message['userId'])) {
-            $message['userId'] = '0';
+        if (empty($message['user_id'])) {
+            $message['user_id'] = '0';
         }
         $model->message = $message;
 

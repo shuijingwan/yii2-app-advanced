@@ -36,7 +36,7 @@ return [
                 'db' => [
                     'class' => 'yii\log\DbTarget',
                     'categories' => [
-                        'api\behaviors\RequestLogBehavior::beforeRequest',
+                        'api\behaviors\RequestLogBehavior::afterRequest',
                     ],
                     'prefix' => function () {
                         $url = !Yii::$app->request->isConsoleRequest ? Yii::$app->request->getUrl() : null;

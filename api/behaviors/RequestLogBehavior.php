@@ -15,14 +15,14 @@ class RequestLogBehavior extends Behavior
     public function events()
     {
         return [
-            Yii::$app::EVENT_BEFORE_REQUEST => 'beforeRequest',
+            Yii::$app::EVENT_AFTER_REQUEST => 'afterRequest',
         ];
     }
 
     /**
      * @inheritdoc
      */
-    public function beforeRequest($event)
+    public function afterRequest($event)
     {
         $url = !Yii::$app->request->isConsoleRequest ? Yii::$app->request->getUrl() : '';
         $requestQueryParams = Yii::$app->getRequest()->getQueryParams();
@@ -31,9 +31,9 @@ class RequestLogBehavior extends Behavior
         $userId = $user ? $user->getId(false) : '-';
         $message = [
             'url' => $url,
-            'requestQueryParams' => $requestQueryParams,
-            'requestBodyParams' => $requestBodyParams,
-            'userId' => $userId,
+            'request_query_params' => $requestQueryParams,
+            'request_body_params' => $requestBodyParams,
+            'user_id' => $userId,
             '$_SERVER' => [
                 'HTTP_ACCEPT_LANGUAGE' => $_SERVER['HTTP_ACCEPT_LANGUAGE'],
                 'HTTP_ACCEPT' => $_SERVER['HTTP_ACCEPT'],
