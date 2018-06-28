@@ -21,11 +21,11 @@ Yii 2高级项目模板是一个最基本的 [Yii 2](http://www.yiiframework.com
 [![Build Status](https://travis-ci.org/yiisoft/yii2-app-advanced.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-advanced)
 
 ## 目录
-- [基本信息](docs/guide-zh-CN/README.md)
-- [安装](docs/guide-zh-CN/start-installation.md)
-    - [手动安装](docs/guide-zh-CN/start-installation.md)
-    - [Vagrant 安装](docs/guide-zh-CN/start-installation.md#使用vagrant安装)
-- [测试](docs/guide-zh-CN/start-testing.md)
+- [基本信息](README.md)
+- [安装](start-installation.md)
+    - [手动安装](start-installation.md)
+    - [Vagrant 安装](start-installation.md#使用vagrant安装)
+- [测试](start-testing.md)
 
 应用目录结构
 -------------------
