@@ -4,9 +4,15 @@
 ## 要求
 
 - 此项目模板的最低要求是您的Web服务器支持PHP 7.1.0。 
-- 必需的PHP扩展：intl
-- php.ini：allow_url_fopen = On
-- MySQL 5.7.7 之前的版本需要启用 innodb_large_prefix
+- 必需的PHP扩展：
+    - intl
+    - gd
+    - mcrypt
+- php.ini：
+    - allow_url_fopen = On
+- MySQL 5.7.7 之前的版本：
+    - innodb_large_prefix=1
+    - innodb_file_format=BARRACUDA
 
 ## Git仓库
 ```
