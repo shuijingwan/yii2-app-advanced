@@ -20,9 +20,6 @@ use yii\data\ActiveDataProvider;
  */
 class IndexAction extends \yii\rest\IndexAction
 {
-    const STATUS_DELETED = 0; //状态：已删除
-    const STATUS_ACTIVE = 10; //状态：活跃
-
     /**
      * Prepares the data provider that should return the requested collection of the models.
      * @return ActiveDataProvider
@@ -52,7 +49,7 @@ class IndexAction extends \yii\rest\IndexAction
         /* @var $modelClass \yii\db\BaseActiveRecord */
         $modelClass = $this->modelClass;
 
-        $query = $modelClass::find()->where(['status' => self::STATUS_ACTIVE]);
+        $query = $modelClass::find()->enabled();
         if (!empty($filter)) {
             $query->andWhere($filter);
         }

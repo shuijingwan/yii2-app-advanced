@@ -63,7 +63,6 @@ class UpdateAction extends Action
 
         $model->scenario = $this->scenario;
         $model->email = $userUpdate->email;
-        $model->status = $userUpdate->status;
         $model->setPassword($userUpdate->password);
         $model->generateAuthKey();
         if ($model->save() === false) {

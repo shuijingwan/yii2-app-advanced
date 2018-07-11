@@ -5,7 +5,9 @@ namespace common\logics;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
+use yii2tech\ar\softdelete\SoftDeleteBehavior;
 use yii\web\IdentityInterface;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "{{%user}}".
@@ -23,8 +25,9 @@ use yii\web\IdentityInterface;
  */
 class User extends \common\models\User implements IdentityInterface
 {
-    const STATUS_DELETED = 0;
-    const STATUS_ACTIVE = 10;
+    const STATUS_DELETED = -1; //状态：删除
+    const STATUS_DISABLED = 0; //状态：禁用
+    const STATUS_ENABLED = 1; //状态：启用
 
     /**
      * @inheritdoc
@@ -32,7 +35,20 @@ class User extends \common\models\User implements IdentityInterface
     public function behaviors()
     {
         return [
-            TimestampBehavior::className(),
+            'timestampBehavior' => [
+                'class' => TimestampBehavior::className(),
+                'attributes' => [
+                    self::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
+                    self::EVENT_BEFORE_UPDATE => 'updated_at',
+                    SoftDeleteBehavior::EVENT_BEFORE_SOFT_DELETE => 'updated_at',
+                ]
+            ],
+            'softDeleteBehavior' => [
+                'class' => SoftDeleteBehavior::className(),
+                'softDeleteAttributeValues' => [
+                    'status' => self::STATUS_DELETED
+                ],
+            ],
         ];
     }
 
@@ -41,17 +57,13 @@ class User extends \common\models\User implements IdentityInterface
      */
     public function rules()
     {
-        return [
-            [['username', 'auth_key', 'password_hash', 'email'], 'required'],
-            [['status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
-            [['auth_key'], 'string', 'max' => 32],
-            [['username'], 'unique'],
-            [['email'], 'unique'],
-            [['password_reset_token'], 'unique'],
-            ['status', 'default', 'value' => self::STATUS_ACTIVE],
-            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+        $rules = [
+            ['status', 'default', 'value' => self::STATUS_ENABLED],
+            ['status', 'in', 'range' => [self::STATUS_DELETED, self::STATUS_DISABLED, self::STATUS_ENABLED]],
         ];
+        $parentRules = parent::rules();
+
+        return ArrayHelper::merge($rules, $parentRules);
     }
 
     /**
@@ -59,7 +71,7 @@ class User extends \common\models\User implements IdentityInterface
      */
     public static function findIdentity($id)
     {
-        return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
+        return static::findOne(['id' => $id, 'status' => self::STATUS_ENABLED]);
     }
 
     /**
@@ -78,7 +90,7 @@ class User extends \common\models\User implements IdentityInterface
      */
     public static function findByUsername($username)
     {
-        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+        return static::findOne(['username' => $username, 'status' => self::STATUS_ENABLED]);
     }
 
     /**
@@ -95,7 +107,7 @@ class User extends \common\models\User implements IdentityInterface
 
         return static::findOne([
             'password_reset_token' => $token,
-            'status' => self::STATUS_ACTIVE,
+            'status' => self::STATUS_ENABLED,
         ]);
     }
 
@@ -183,5 +195,14 @@ class User extends \common\models\User implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+    /**
+     * {@inheritdoc}
+     * @return UserQuery the active query used by this AR class.
+     */
+    public static function find()
+    {
+        return new UserQuery(get_called_class());
     }
 }

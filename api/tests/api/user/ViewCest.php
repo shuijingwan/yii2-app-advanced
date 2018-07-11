@@ -9,8 +9,8 @@ use api\fixtures\UserFixture;
 
 class ViewCest
 {
-    const STATUS_DELETED = 0; //状态：已删除
-    const STATUS_ACTIVE = 10; //状态：活跃
+    const STATUS_DISABLED = 0; //状态：禁用
+    const STATUS_ENABLED = 1; //状态：启用
 
     public function _before(ApiTester $I)
     {

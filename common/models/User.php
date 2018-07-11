@@ -13,14 +13,14 @@ use Yii;
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $email
- * @property int $status
- * @property int $created_at
- * @property int $updated_at
+ * @property int $status 状态，-1：删除；0：禁用；1：启用
+ * @property int $created_at 创建时间
+ * @property int $updated_at 更新时间
  */
 class User extends \yii\db\ActiveRecord
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -28,12 +28,12 @@ class User extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
+            [['username', 'auth_key', 'password_hash', 'email'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
@@ -44,7 +44,7 @@ class User extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {
@@ -59,5 +59,14 @@ class User extends \yii\db\ActiveRecord
             'created_at' => Yii::t('model/user', 'Created At'),
             'updated_at' => Yii::t('model/user', 'Updated At'),
         ];
+    }
+
+    /**
+     * {@inheritdoc}
+     * @return UserQuery the active query used by this AR class.
+     */
+    public static function find()
+    {
+        return new UserQuery(get_called_class());
     }
 }

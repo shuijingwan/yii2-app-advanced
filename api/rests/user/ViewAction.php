@@ -19,9 +19,6 @@ use Yii;
  */
 class ViewAction extends Action
 {
-    const STATUS_DELETED = 0; //状态：已删除
-    const STATUS_ACTIVE = 10; //状态：活跃
-
     /**
      * Displays a model.
      * @param string $id the primary key of the model.
@@ -32,11 +29,6 @@ class ViewAction extends Action
         $model = $this->findModel($id);
         if ($this->checkAccess) {
             call_user_func($this->checkAccess, $this->id, $model);
-        }
-
-        /* 判断状态，如果为已删除，则返回失败 */
-        if ($model->status === self::STATUS_DELETED) {
-            return ['code' => 20003, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '20003'), ['id' => $id]))];
         }
 
         return ['code' => 10000, 'message' => Yii::t('success', '10002'), 'data' => $model];

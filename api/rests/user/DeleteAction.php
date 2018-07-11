@@ -33,7 +33,7 @@ class DeleteAction extends Action
             call_user_func($this->checkAccess, $this->id, $model);
         }
 
-        if ($model->delete() === false) {
+        if ($model->softDelete() === false) {
             throw new ServerErrorHttpException('Failed to delete the object for unknown reason.');
         }
 
