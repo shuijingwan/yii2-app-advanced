@@ -44,6 +44,16 @@ class UpdateAction extends Action
             call_user_func($this->checkAccess, $this->id, $model);
         }
 
+        /* 判断状态，如果为删除，则返回失败 */
+        if ($model->status === $model::STATUS_DELETED) {
+            return ['code' => 20003, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '20003'), ['id' => $id]))];
+        }
+
+        /* 判断状态，如果为禁用，则返回失败 */
+        if ($model->status === $model::STATUS_DISABLED) {
+            return ['code' => 20804, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '20804'), ['id' => $id]))];
+        }
+
         $userUpdate = new UserUpdate();
         $userUpdate->id = $id;
         $userUpdate->load(Yii::$app->getRequest()->getBodyParams(), '');

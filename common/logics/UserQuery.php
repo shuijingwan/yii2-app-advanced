@@ -9,11 +9,10 @@ namespace common\logics;
  */
 class UserQuery extends \common\models\UserQuery
 {
-    // 默认加上一些条件(不等于 状态：删除)
-    public function init()
+    // 不等于 状态：删除
+    public function notDeleted()
     {
         $this->andWhere(['!=', 'status', User::STATUS_DELETED]);
-        parent::init();
     }
 
     // 等于 状态：禁用

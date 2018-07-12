@@ -8,4 +8,5 @@ return [
     20801 => 'Log list is empty',
     20802 => 'Log ID: {id}, does not exist',
     20803 => 'Data filter validation failed: {firstErrors}',
+    20804 => 'User ID: {id}, status is disabled',
 ];
