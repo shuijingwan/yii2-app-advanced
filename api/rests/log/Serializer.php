@@ -56,19 +56,6 @@ class Serializer extends \yii\rest\Serializer
             return ['code' => 20801, 'message' => Yii::t('error', '20801')];
         }
 
-        foreach ($result['items'] as $key => $item) {
-            $result['items'][$key]['message'] = $item['message'] = unserialize($item['message']);
-            if (empty($item['message']['user_id'])) {
-                $result['items'][$key]['message']['user_id'] = '0';
-            }
-            if (empty($item['message']['request_query_params'])) {
-                $result['items'][$key]['message']['request_query_params'] = (object)[];
-            }
-            if (empty($item['message']['request_body_params'])) {
-                $result['items'][$key]['message']['request_body_params'] = (object)[];
-            }
-        }
-
         if ($pagination !== false) {
             return ['code' => 10000, 'message' => Yii::t('success', '10801'), 'data' => array_merge($result, $this->serializePagination($pagination))];
         }

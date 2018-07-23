@@ -58,7 +58,7 @@ class IndexAction extends \yii\rest\IndexAction
         /* @var $modelClass \yii\db\BaseActiveRecord */
         $modelClass = $this->modelClass;
 
-        $query = $modelClass::find();
+        $query = $modelClass::find()->orderBy(['id' => SORT_DESC]);
         if (!empty($filter)) {
             $query->andFilterWhere($filter);
         }

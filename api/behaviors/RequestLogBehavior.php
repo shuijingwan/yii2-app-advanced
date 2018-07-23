@@ -37,7 +37,7 @@ class RequestLogBehavior extends Behavior
                 'request_body_params' => $requestBodyParams,
                 'user_id' => $userId,
                 '$_SERVER' => [
-                    'HTTP_ACCEPT_LANGUAGE' => $_SERVER['HTTP_ACCEPT_LANGUAGE'],
+                    'HTTP_ACCEPT_LANGUAGE' => isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '',
                     'HTTP_ACCEPT' => $_SERVER['HTTP_ACCEPT'],
                     'HTTP_HOST' => $_SERVER['HTTP_HOST'],
                     'REMOTE_ADDR' => $_SERVER['REMOTE_ADDR'],
@@ -46,7 +46,7 @@ class RequestLogBehavior extends Behavior
                     'CONTENT_TYPE' => $_SERVER['CONTENT_TYPE'],
                 ],
             ];
-            Yii::info(serialize($message), __METHOD__);
+            Yii::info($message, __METHOD__);
         }
     }
 }

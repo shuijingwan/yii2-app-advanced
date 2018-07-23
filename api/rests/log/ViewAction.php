@@ -31,23 +31,6 @@ class ViewAction extends Action
             call_user_func($this->checkAccess, $this->id, $model);
         }
 
-        $model->message = $message = unserialize($model->message);
-        if (empty($message['user_id'])) {
-            $message['user_id'] = '0';
-        }
-        $model->message = $message;
-
-        $response = Yii::$app->response;
-        $response->formatters = [
-            yii\web\Response::FORMAT_JSON => [
-                'class' => 'yii\web\JsonResponseFormatter',
-                'encodeOptions' => 336,
-            ],
-            yii\web\Response::FORMAT_XML => [
-                'class' => 'yii\web\XmlResponseFormatter',
-            ],
-        ];
-
         return ['code' => 10000, 'message' => Yii::t('success', '10802'), 'data' => $model];
     }
 }
