@@ -14,5 +14,9 @@ return [
             'controller' => ['v1/log'],
             'only' => ['index', 'view'],
         ],
+        [
+            'class' => 'yii\rest\UrlRule',
+            'controller' => ['v1/page'],
+        ],
     ],
 ];

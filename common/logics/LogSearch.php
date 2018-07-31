@@ -23,7 +23,7 @@ class LogSearch extends Model
         return [
             [['level'], 'integer'],
             [['log_time'], 'number'],
-            [['prefix', 'message'], 'string'],
+            [['category', 'prefix'], 'string'],
             [['category', 'prefix'], 'trim'],
         ];
     }
