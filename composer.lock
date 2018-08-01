@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d7a79656e5b8762206a487dabb09aa6",
+    "content-hash": "f112c31ecc6a3c9dc1ae7c7d97aa9c41",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -117,7 +117,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/cebe/markdown/25b28bae8a6f185b5030673af77b32e1163d5c6e.zip",
+                "url": "https://api.github.com/repos/cebe/markdown/zipball/25b28bae8a6f185b5030673af77b32e1163d5c6e",
                 "reference": "25b28bae8a6f185b5030673af77b32e1163d5c6e",
                 "shasum": ""
             },
@@ -177,7 +177,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/doctrine/lexer/83893c552fd2045dd78aef794c31e694c37c0b8c.zip",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
                 "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
                 "shasum": ""
             },
@@ -231,7 +231,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/egulias/EmailValidator/8790f594151ca6a2010c6218e09d96df67173ad3.zip",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/8790f594151ca6a2010c6218e09d96df67173ad3",
                 "reference": "8790f594151ca6a2010c6218e09d96df67173ad3",
                 "shasum": ""
             },
@@ -288,7 +288,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/ezyang/htmlpurifier/d85d39da4576a6934b72480be6978fb10c860021.zip",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/d85d39da4576a6934b72480be6978fb10c860021",
                 "reference": "d85d39da4576a6934b72480be6978fb10c860021",
                 "shasum": ""
             },
@@ -335,7 +335,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/FlowCommunications/JSONPath/f0222818d5c938e4ab668ab2e2c079bd51a27112.zip",
+                "url": "https://api.github.com/repos/FlowCommunications/JSONPath/zipball/f0222818d5c938e4ab668ab2e2c079bd51a27112",
                 "reference": "f0222818d5c938e4ab668ab2e2c079bd51a27112",
                 "shasum": ""
             },
@@ -367,6 +367,165 @@
             "time": "2018-03-04T16:39:47+00:00"
         },
         {
+            "name": "hprose/hprose",
+            "version": "v2.0.35",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hprose/hprose-php.git",
+                "reference": "b0f9b68a07ec3a08a23c54592e54ab68972a9c33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hprose/hprose-php/zipball/b0f9b68a07ec3a08a23c54592e54ab68972a9c33",
+                "reference": "b0f9b68a07ec3a08a23c54592e54ab68972a9c33",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.0.0"
+            },
+            "suggest": {
+                "ext-hprose": "Faster serialize and unserialize hprose extension."
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/init.php"
+                ],
+                "psr-4": {
+                    "Hprose\\": "src/Hprose"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ma Bingyao",
+                    "email": "andot@hprose.com",
+                    "homepage": "http://hprose.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "It is a modern, lightweight, cross-language, cross-platform, object-oriented, high performance, remote dynamic communication middleware. It is not only easy to use, but powerful. You just need a little time to learn, then you can use it to easily construct cross language cross platform distributed application system.",
+            "homepage": "http://hprose.com/",
+            "keywords": [
+                "HTML5",
+                "Hprose",
+                "Socket",
+                "ajax",
+                "async",
+                "communication",
+                "cross-domain",
+                "cross-language",
+                "cross-platform",
+                "framework",
+                "future",
+                "game",
+                "http",
+                "json",
+                "jsonrpc",
+                "library",
+                "middleware",
+                "phprpc",
+                "protocol",
+                "rpc",
+                "serialization",
+                "serialize",
+                "service",
+                "tcp",
+                "unix",
+                "web",
+                "webapi",
+                "webservice",
+                "websocket",
+                "xmlrpc"
+            ],
+            "time": "2018-04-24T14:29:31+00:00"
+        },
+        {
+            "name": "hprose/hprose-yii",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hprose/hprose-yii.git",
+                "reference": "865520376d232eadd1274a1c71400b9ba0ebca64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hprose/hprose-yii/zipball/865520376d232eadd1274a1c71400b9ba0ebca64",
+                "reference": "865520376d232eadd1274a1c71400b9ba0ebca64",
+                "shasum": ""
+            },
+            "require": {
+                "hprose/hprose": "^2.0",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "^2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.0.0"
+            },
+            "suggest": {
+                "ext-hprose": "Faster serialize and unserialize hprose extension."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Hprose\\Yii\\": "src/Hprose/Yii"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ma Bingyao",
+                    "email": "andot@hprose.com",
+                    "homepage": "http://hprose.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Hprose Server for Yii 2",
+            "homepage": "http://hprose.com/",
+            "keywords": [
+                "HTML5",
+                "Hprose",
+                "Socket",
+                "ajax",
+                "async",
+                "communication",
+                "cross-domain",
+                "cross-language",
+                "cross-platform",
+                "framework",
+                "future",
+                "game",
+                "http",
+                "json",
+                "jsonrpc",
+                "library",
+                "middleware",
+                "protocol",
+                "rpc",
+                "serialization",
+                "serialize",
+                "service",
+                "tcp",
+                "unix",
+                "web",
+                "webapi",
+                "webservice",
+                "websocket",
+                "xmlrpc",
+                "yii"
+            ],
+            "time": "2016-07-27T03:20:34+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.1.1",
             "source": {
@@ -376,7 +535,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/swiftmailer/swiftmailer/aa899fef280b1c1aec8d5d4ac069af7f80c89a23.zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/aa899fef280b1c1aec8d5d4ac069af7f80c89a23",
                 "reference": "aa899fef280b1c1aec8d5d4ac069af7f80c89a23",
                 "shasum": ""
             },
@@ -435,7 +594,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/yii2tech/ar-softdelete/0cc8cd22aa7fd66c1d02d76e811a55c2f0eb9be6.zip",
+                "url": "https://api.github.com/repos/yii2tech/ar-softdelete/zipball/0cc8cd22aa7fd66c1d02d76e811a55c2f0eb9be6",
                 "reference": "0cc8cd22aa7fd66c1d02d76e811a55c2f0eb9be6",
                 "shasum": ""
             },
@@ -485,7 +644,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/yiisoft/yii2-framework/ed3a9e1c4abe206e1c3ce48a6b3624119b79850d.zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/ed3a9e1c4abe206e1c3ce48a6b3624119b79850d",
                 "reference": "ed3a9e1c4abe206e1c3ce48a6b3624119b79850d",
                 "shasum": ""
             },
@@ -585,7 +744,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/yiisoft/yii2-bootstrap/3f49c47924bb9fa5363c3fc7b073d954168cf438.zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/3f49c47924bb9fa5363c3fc7b073d954168cf438",
                 "reference": "3f49c47924bb9fa5363c3fc7b073d954168cf438",
                 "shasum": ""
             },
@@ -645,7 +804,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/yiisoft/yii2-composer/1439e78be1218c492e6cde251ed87d3f128b9534.zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/1439e78be1218c492e6cde251ed87d3f128b9534",
                 "reference": "1439e78be1218c492e6cde251ed87d3f128b9534",
                 "shasum": ""
             },
@@ -699,7 +858,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/yiisoft/yii2-swiftmailer/fd917fbe63b7ea796c52902143b83b98e65bfb73.zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/fd917fbe63b7ea796c52902143b83b98e65bfb73",
                 "reference": "fd917fbe63b7ea796c52902143b83b98e65bfb73",
                 "shasum": ""
             },

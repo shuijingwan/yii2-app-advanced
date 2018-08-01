@@ -9,7 +9,8 @@ end
 domains = {
   frontend: 'y2aa-frontend.test',
   backend:  'y2aa-backend.test',
-  api:      'y2aa-api.test'
+  api:      'y2aa-api.test',
+  rpc:      'y2aa-rpc.test'
 }
 
 config = {
@@ -74,5 +75,5 @@ Vagrant.configure(2) do |config|
   config.vm.provision 'shell', path: './vagrant/provision/always-as-root.sh', run: 'always'
 
   # post-install message (vagrant console)
-  config.vm.post_up_message = "Frontend URL: http://#{domains[:frontend]}\nBackend URL: http://#{domains[:backend]}\nApi URL: http://#{domains[:api]}"
+  config.vm.post_up_message = "Frontend URL: http://#{domains[:frontend]}\nBackend URL: http://#{domains[:backend]}\nApi URL: http://#{domains[:api]}\nRpc URL: http://#{domains[:rpc]}"
 end

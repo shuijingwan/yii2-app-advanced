@@ -4,6 +4,7 @@ include:
     - frontend
     - backend
     - api
+    - rpc
 paths:
     log: console/runtime/logs
 settings:

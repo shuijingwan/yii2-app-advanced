@@ -78,6 +78,16 @@ api
     tests/               contains various tests for api application
     views/               contains view files for the Web application
     web/                 contains the entry script and Web resources
+rpc
+    assets/              contains application assets such as JavaScript and CSS
+    config/              contains rpc configurations
+    controllers/         contains Web controller classes
+    models/              contains rpc-specific model classes
+    runtime/             contains files generated during runtime
+    tests/               contains various tests for rpc application
+    views/               contains view files for the Web application
+    web/                 contains the entry script and Web resources
+    widgets/             contains rpc widgets
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 .gitignore               contains a list of directories ignored by git version system. If you need something never get to your source code repository, add it there.
