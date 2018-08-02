@@ -31,6 +31,8 @@ class CreateAction extends Action
      */
     public $viewAction = 'view';
 
+    public $createScenario = 'create';
+
 
     /**
      * Creates a new model.
@@ -45,15 +47,32 @@ class CreateAction extends Action
 
         /* @var $model \yii\db\ActiveRecord */
         $model = new $this->modelClass([
-            'scenario' => $this->scenario,
+            'scenario' => $this->createScenario,
         ]);
 
         $model->load(Yii::$app->getRequest()->getBodyParams(), '');
-        if ($model->save()) {
-            $response = Yii::$app->getResponse();
-            $response->setStatusCode(201);
-            $id = implode(',', array_values($model->getPrimaryKey(true)));
-            $response->getHeaders()->set('Location', Url::toRoute([$this->viewAction, 'id' => $id], true));
+
+        // 模型转换成数组
+        $data = $model->attributes;
+
+        // 内容协商
+        $response = Yii::$app->response;
+        $acceptParams = $response->acceptParams;
+        if (isset($acceptParams['version'])) {
+            $version = $acceptParams['version'];
+        } else {
+            $version = '';
+        }
+
+        if ($model->validate()) {
+            $data = $model->create($data, $version, Yii::$app->language);
+            if ($data['code'] === 10000) {
+                $response = Yii::$app->getResponse();
+                $response->setStatusCode(201);
+                $id = $data['data']['id'];
+                $response->getHeaders()->set('Location', Url::toRoute([$this->viewAction, 'id' => $id], true));
+            }
+            return $data;
         } elseif ($model->hasErrors()) {
             $response = Yii::$app->getResponse();
             $response->setStatusCode(422, 'Data Validation Failed.');
@@ -65,7 +84,5 @@ class CreateAction extends Action
         } elseif (!$model->hasErrors()) {
             throw new ServerErrorHttpException('Failed to create the object for unknown reason.');
         }
-
-        return ['code' => 10000, 'message' => Yii::t('success', '10805'), 'data' => $model];
     }
 }

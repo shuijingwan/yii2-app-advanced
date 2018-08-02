@@ -49,6 +49,29 @@ return [
             'rules' => [
             ],
         ],
+        'i18n' => [
+            'translations' => [
+                'model/*'=> [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'forceTranslation' => true,
+                    'basePath'=>'@common/messages',
+                    'fileMap'=>[
+                    ],
+                ],
+                '*'=> [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'forceTranslation' => true,
+                    'basePath'=>'@rpc/messages',
+                    'fileMap'=>[
+                    ],
+                ],
+            ],
+        ],
+    ],
+    'modules' => [
+        'v1' => [
+            'class' => rpc\modules\v1\Module::class,
+        ],
     ],
     'params' => $params,
 ];

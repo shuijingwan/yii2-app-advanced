@@ -7,5 +7,5 @@ namespace api\modules\v1\controllers;
  */
 class PageController extends \api\controllers\PageController
 {
-    public $modelClass = 'api\modules\v1\models\Page';
+    public $modelClass = 'api\modules\v1\models\rpc\Page';
 }

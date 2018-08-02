@@ -15,6 +15,8 @@ class Page extends \common\models\Page
     const STATUS_DRAFT = 1; //状态：草稿
     const STATUS_PUBLISHED = 2; //状态：发布
 
+    const SCENARIO_CREATE = 'create';
+
     /**
      * @inheritdoc
      */
@@ -45,6 +47,17 @@ class Page extends \common\models\Page
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function scenarios()
+    {
+        $scenarios = parent::scenarios();
+        $scenarios[self::SCENARIO_CREATE] = ['slug', 'title', 'body', 'view', 'status'];
+
+        return $scenarios;
+    }
+
+    /**
      * @inheritdoc
      */
     public function rules()
@@ -52,6 +65,8 @@ class Page extends \common\models\Page
         $rules = [
             [['title', 'body'], 'required'],
             [['slug'], 'unique'],
+            ['view', 'default', 'value' => 0],
+            ['status', 'default', 'value' => self::STATUS_DRAFT],
         ];
         $parentRules = parent::rules();
 
