@@ -6,8 +6,7 @@
     <br>
 </p>
 
-Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-developing complex Web applications with multiple tiers.
+Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for developing complex Web applications with multiple tiers.
 
 The template includes four tiers: api, front end, back end, and console, each of which
 is a separate Yii application.
@@ -71,6 +70,7 @@ api
     config/              contains api configurations
     controllers/         contains Web controller classes
     fixtures/            contains fixtures for api application
+    messages/            contains message files for I18N
     models/              contains api-specific model classes
     modules/             contains modules for api application
     rests/               contains rests for api application
@@ -82,12 +82,13 @@ rpc
     assets/              contains application assets such as JavaScript and CSS
     config/              contains rpc configurations
     controllers/         contains Web controller classes
+    messages/            contains message files for I18N
     models/              contains rpc-specific model classes
+    modules/             contains modules for rpc application
     runtime/             contains files generated during runtime
     tests/               contains various tests for rpc application
     views/               contains view files for the Web application
     web/                 contains the entry script and Web resources
-    widgets/             contains rpc widgets
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 .gitignore               contains a list of directories ignored by git version system. If you need something never get to your source code repository, add it there.

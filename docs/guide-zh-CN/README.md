@@ -70,11 +70,23 @@ api                      接口
     config/              包含接口配置
     controllers/         包含接口的Web控制器类
     fixtures/            包含接口的测试夹具
+    messages/            包含国际化的消息文件
     models/              包含接口的模型类
     modules/             包含接口的模块
     rests/               包含接口的 REST API 类
     runtime/             包含运行时生成的文件，例如日志和缓存文件
     tests/               包含接口应用程序的各种测试
+    views/               包含Web应用程序的视图文件
+    web/                 Web 应用根目录，包含 Web 入口文件
+rpc                      远程过程调用
+    assets/              包含应用程序的资源文件(javascript 和 css)
+    config/              包含远程过程调用配置
+    controllers/         包含远程过程调用的Web控制器类
+    messages/            包含国际化的消息文件
+    models/              包含远程过程调用的模型类
+    modules/             包含远程过程调用的模块
+    runtime/             包含运行时生成的文件，例如日志和缓存文件
+    tests/               包含远程过程调用应用程序的各种测试
     views/               包含Web应用程序的视图文件
     web/                 Web 应用根目录，包含 Web 入口文件
 vendor/                  包含相关的第三方软件包
