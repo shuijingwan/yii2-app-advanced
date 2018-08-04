@@ -38,6 +38,7 @@ common                   公共(所有应用程序共有的文件)
     mail/                包含电子邮件的视图文件
     messages/            包含国际化的消息文件
     models/              包含在接口、前端、后端和控制台中使用的模型数据类
+    services/            包含在接口、前端、后端和控制台中使用的服务类(多个模型的逻辑类)
     tests/               包含公共类的各种测试
     widgets/             包含公共的小部件
 console                  控制台
@@ -46,12 +47,14 @@ console                  控制台
     migrations/          包含数据库迁移
     models/              包含控制台的模型类
     runtime/             包含运行时生成的文件，例如日志和缓存文件
+    services/            包含控制台的服务类
 backend                  后端
     assets/              包含应用程序的资源文件(javascript 和 css)
     config/              包含后端配置
     controllers/         包含后端的Web控制器类
     models/              包含后端的模型类
     runtime/             包含运行时生成的文件，例如日志和缓存文件
+    services/            包含后端的服务类
     tests/               包含后端应用程序的各种测试
     views/               包含Web应用程序的视图文件
     web/                 Web 应用根目录，包含 Web 入口文件
@@ -61,6 +64,7 @@ frontend                 前端
     controllers/         包含前端的Web控制器类
     models/              包含前端的模型类
     runtime/             包含运行时生成的文件，例如日志和缓存文件
+    services/            包含前端的服务类
     tests/               包含前端应用程序的各种测试
     views/               包含Web应用程序的视图文件
     web/                 Web 应用根目录，包含 Web 入口文件
@@ -75,6 +79,7 @@ api                      接口
     modules/             包含接口的模块
     rests/               包含接口的 REST API 类
     runtime/             包含运行时生成的文件，例如日志和缓存文件
+    services/            包含接口的服务类
     tests/               包含接口应用程序的各种测试
     views/               包含Web应用程序的视图文件
     web/                 Web 应用根目录，包含 Web 入口文件
@@ -86,6 +91,7 @@ rpc                      远程过程调用
     models/              包含远程过程调用的模型类
     modules/             包含远程过程调用的模块
     runtime/             包含运行时生成的文件，例如日志和缓存文件
+    services/            包含远程过程调用的服务类
     tests/               包含远程过程调用应用程序的各种测试
     views/               包含Web应用程序的视图文件
     web/                 Web 应用根目录，包含 Web 入口文件

@@ -38,6 +38,7 @@ common
     mail/                contains view files for e-mails
     messages/            contains message files for I18N
     models/              contains model classes used in both backend and frontend and api and console
+    services             contains service classes used in both backend and frontend and api and console
     tests/               contains various tests for common classes
     widgets/             contains common widgets
 console
@@ -46,12 +47,14 @@ console
     migrations/          contains database migrations
     models/              contains console-specific model classes
     runtime/             contains files generated during runtime
+    services/            contains console-specific service classes
 backend
     assets/              contains application assets such as JavaScript and CSS
     config/              contains backend configurations
     controllers/         contains Web controller classes
     models/              contains backend-specific model classes
     runtime/             contains files generated during runtime
+    services/            contains backend-specific service classes
     tests/               contains various tests for backend application    
     views/               contains view files for the Web application
     web/                 contains the entry script and Web resources
@@ -61,6 +64,7 @@ frontend
     controllers/         contains Web controller classes
     models/              contains frontend-specific model classes
     runtime/             contains files generated during runtime
+    services/            contains frontend-specific service classes
     tests/               contains various tests for frontend application
     views/               contains view files for the Web application
     web/                 contains the entry script and Web resources
@@ -75,6 +79,7 @@ api
     modules/             contains modules for api application
     rests/               contains rests for api application
     runtime/             contains files generated during runtime
+    services/            contains api-specific service classes
     tests/               contains various tests for api application
     views/               contains view files for the Web application
     web/                 contains the entry script and Web resources
@@ -86,6 +91,7 @@ rpc
     models/              contains rpc-specific model classes
     modules/             contains modules for rpc application
     runtime/             contains files generated during runtime
+    services/            contains rpc-specific service classes
     tests/               contains various tests for rpc application
     views/               contains view files for the Web application
     web/                 contains the entry script and Web resources

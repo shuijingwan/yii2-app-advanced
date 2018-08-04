@@ -411,5 +411,5 @@ composer install
 * api: http://y2aa-api.test
 * frontend: http://y2aa-frontend.test
 * backend: http://y2aa-backend.test
-* api: http://y2aa-rpc.test
+* rpc: http://y2aa-rpc.test
 
