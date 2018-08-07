@@ -6,6 +6,7 @@ use Yii;
 use yii\behaviors\SluggableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii2tech\ar\softdelete\SoftDeleteBehavior;
+use common\behaviors\UUIDBehavior;
 use yii\helpers\ArrayHelper;
 
 class Page extends \common\models\Page
@@ -36,6 +37,10 @@ class Page extends \common\models\Page
                 'attribute' => 'title',
                 'ensureUnique' => true,
                 'immutable' => true
+            ],
+            'uuid' => [
+                'class' => UUIDBehavior::className(),
+                'column' => 'uuid',
             ],
             'softDeleteBehavior' => [
                 'class' => SoftDeleteBehavior::className(),

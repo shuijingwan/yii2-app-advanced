@@ -8,6 +8,7 @@
 
 return [
     'ID' => 'ID',
+    'Uuid' => 'Uuid',
     'Slug' => 'Slug',
     'Title' => 'Title',
     'Body' => 'Body',
