@@ -11,6 +11,7 @@ class UserUpdate extends Model
     public $id;
     public $email;
     public $password;
+    public $status;
 
     /**
      * {@inheritdoc}
@@ -25,6 +26,7 @@ class UserUpdate extends Model
             ['email', 'unique', 'targetClass' => '\api\models\User', 'filter' => ['!=', 'id', $this->id]],
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+            ['status', 'integer'],
         ];
     }
 }

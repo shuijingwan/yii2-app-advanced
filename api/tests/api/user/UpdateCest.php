@@ -37,7 +37,7 @@ class UpdateCest
         $data = [
             'email' => '111111@163.com',
             'password' => '111111',
-            'status' => 0,
+            'status' => 1,
         ];
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
         $I->haveHttpHeader('Accept-Language', 'en-US');
@@ -68,7 +68,7 @@ class UpdateCest
         $data = [
             'email' => '111111@163.com',
             'password' => '111111',
-            'status' => 0,
+            'status' => 1,
         ];
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
         $I->haveHttpHeader('Accept-Language', 'en-US');

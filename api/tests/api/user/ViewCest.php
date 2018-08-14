@@ -107,8 +107,8 @@ class ViewCest
         $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('error', Yii::t('error', Yii::t('error', '20002'), ['id' => $id]))]));
     }
 
-    // 获取用户详情(用户ID：{id}，的状态为已删除、JSON响应)
-    public function viewStatusDeletedIsJson(ApiTester $I)
+    // 获取用户详情(用户ID：{id}，的状态为已禁用、JSON响应)
+    public function viewStatusDisabledIsJson(ApiTester $I)
     {
         $id = 2;
         $I->haveHttpHeader('Accept', 'application/json; version=' . $I->getMinorPatch() . '');
@@ -121,13 +121,13 @@ class ViewCest
         $I->seeResponseJsonMatchesJsonPath('$.message');
         // 检查响应的数据
         $I->seeResponseContainsJson([
-            'code' => 20003,
-            'message' => Yii::t('error', Yii::t('error', Yii::t('error', '20003'), ['id' => $id])),
+            'code' => 20804,
+            'message' => Yii::t('error', Yii::t('error', Yii::t('error', '20804'), ['id' => $id])),
         ]);
     }
 
-    // 获取用户详情(用户ID：{id}，的状态为已删除、XML响应)
-    public function viewStatusDeletedIsXml(ApiTester $I)
+    // 获取用户详情(用户ID：{id}，的状态为已禁用、XML响应)
+    public function viewStatusDisabledIsXml(ApiTester $I)
     {
         $id = 2;
         $I->haveHttpHeader('Accept', 'application/xml; version=' . $I->getMinorPatch() . '');
@@ -139,7 +139,7 @@ class ViewCest
         $I->seeXmlResponseMatchesXpath('//code');
         $I->seeXmlResponseMatchesXpath('//message');
         // 检查响应的数据
-        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 20003]));
-        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('error', Yii::t('error', Yii::t('error', '20003'), ['id' => $id]))]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 20804]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('error', Yii::t('error', Yii::t('error', '20804'), ['id' => $id]))]));
     }
 }
