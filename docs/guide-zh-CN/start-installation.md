@@ -56,8 +56,8 @@ composer install
     - 对于远程过程调用 `/path/to/yii-application/rpc/web/` 并且使用URL `http://rpc.test/`
     
     对于Apache，使用如下配置：
-    
-    ```Apache
+
+    ```
     <VirtualHost *:80>
         ServerName api.test
         DocumentRoot "/path/to/yii-application/api/web/"
@@ -141,7 +141,7 @@ composer install
     
     Nginx使用如下配置：
     
-    ```Nginx
+    ```
     server {
         charset utf-8;
         client_max_body_size 128M;

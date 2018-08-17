@@ -164,7 +164,7 @@ composer install
     
     对于Apache，使用如下配置：
     
-    ```Apache
+    ```
     <VirtualHost *:80>
         ServerName y2aa.test
     
@@ -269,7 +269,7 @@ composer install
     
     Nginx使用如下配置：
     
-    ```Nginx
+    ```
     server {
         listen 80;
         server_name y2aa.test;
