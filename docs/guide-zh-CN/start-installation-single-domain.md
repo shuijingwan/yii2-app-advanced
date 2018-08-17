@@ -168,8 +168,8 @@ composer install
     <VirtualHost *:80>
         ServerName y2aa.test
     
-        #ErrorLog /var/log/apache2/y2aa.test.error.log
-        #CustomLog /var/log/apache2/y2aa.test.access.log combined
+        #ErrorLog /path/to/yii-application/log/y2aa.test.error.log
+        #CustomLog /path/to/yii-application/log/y2aa.test.access.log combined
         AddDefaultCharset UTF-8
     
         Options FollowSymLinks
