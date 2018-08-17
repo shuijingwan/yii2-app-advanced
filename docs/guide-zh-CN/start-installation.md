@@ -1,4 +1,4 @@
-安装
+安装(多域名)
 ===
 
 ## 要求
@@ -50,14 +50,14 @@ composer install
 
 4. 设置Web服务器的文档根目录：
 
-   - 对于接口 `/path/to/yii-application/api/web/` 并且使用URL `http://api.test/`
-   - 对于前端 `/path/to/yii-application/frontend/web/` 并且使用URL `http://frontend.test/`
-   - 对于后端 `/path/to/yii-application/backend/web/` 并且使用URL `http://backend.test/`
-   - 对于远程过程调用 `/path/to/yii-application/rpc/web/` 并且使用URL `http://rpc.test/`
+    - 对于接口 `/path/to/yii-application/api/web/` 并且使用URL `http://api.test/`
+    - 对于前端 `/path/to/yii-application/frontend/web/` 并且使用URL `http://frontend.test/`
+    - 对于后端 `/path/to/yii-application/backend/web/` 并且使用URL `http://backend.test/`
+    - 对于远程过程调用 `/path/to/yii-application/rpc/web/` 并且使用URL `http://rpc.test/`
 
    对于Apache，使用如下配置：
 
-   ```apache
+   ```Apache
     <VirtualHost *:80>
         ServerName api.test
         DocumentRoot "/path/to/yii-application/api/web/"
@@ -139,9 +139,9 @@ composer install
     </VirtualHost>
    ```
 
-   nginx使用如下配置：
+   Nginx使用如下配置：
 
-   ```nginx
+   ```Nginx
     server {
         charset utf-8;
         client_max_body_size 128M;

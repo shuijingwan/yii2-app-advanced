@@ -23,7 +23,8 @@ Documentation is at [docs/guide-zh-CN/README.md](docs/guide-zh-CN/README.md).
 ## TABLE OF CONTENTS
 - [Basic info](docs/guide-zh-CN/README.md)
 - [Installation](docs/guide-zh-CN/start-installation.md)
-    - [Manual installation](docs/guide-zh-CN/start-installation.md)
+    - [Manual installation(Multiple domain)](docs/guide-zh-CN/start-installation.md)
+    - [Manual installation(Single domain)](docs/guide-zh-CN/start-installation-single-domain.md)
     - [Vagrant installation](docs/guide-zh-CN/start-installation.md#使用vagrant安装)
 - [Testing](docs/guide-zh-CN/start-testing.md)
 
