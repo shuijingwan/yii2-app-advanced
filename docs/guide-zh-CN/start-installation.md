@@ -50,10 +50,12 @@ composer install
 
 4. 设置Web服务器的文档根目录：
 
-    - 对于接口 `/path/to/yii-application/api/web/` 并且使用URL `http://api.test/`
-    - 对于前端 `/path/to/yii-application/frontend/web/` 并且使用URL `http://frontend.test/`
-    - 对于后端 `/path/to/yii-application/backend/web/` 并且使用URL `http://backend.test/`
-    - 对于远程过程调用 `/path/to/yii-application/rpc/web/` 并且使用URL `http://rpc.test/`
+    ```
+    对于接口 /path/to/yii-application/api/web/ 并且使用URL http://api.test/
+    对于前端 /path/to/yii-application/frontend/web/ 并且使用URL http://frontend.test/
+    对于后端 /path/to/yii-application/backend/web/ 并且使用URL http://backend.test/
+    对于远程过程调用 /path/to/yii-application/rpc/web/ 并且使用URL http://rpc.test/
+    ```
     
 5. 设置Web服务器的配置：
     
