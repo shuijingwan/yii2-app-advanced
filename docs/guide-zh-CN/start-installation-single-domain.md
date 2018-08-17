@@ -30,7 +30,7 @@ composer install
 
 1. 编辑 \frontend\config\main.php
 
-   ```
+    ```
     return [
         'components' => [
             'request' => [
@@ -45,11 +45,11 @@ composer install
             ],
         ],
     ];
-   ```
+    ```
 
 2. 编辑 \backend\config\main.php
 
-   ```
+    ```
     return [
         'homeUrl' => '/backend',
         'components' => [
@@ -85,11 +85,11 @@ composer install
             ],
         ],
     ];
-   ```
+    ```
    
 3. 编辑 \api\config\main.php
 
-   ```
+    ```
     return [
         'homeUrl' => '/api',
         'components' => [
@@ -103,11 +103,11 @@ composer install
             'urlManager' => require __DIR__ . '/urlManager.php',
         ],
     ];
-   ```
+    ```
    
 4. 编辑 \rpc\config\main.php
 
-   ```
+    ```
     return [
         'homeUrl' => '/rpc',
         'components' => [
@@ -123,29 +123,29 @@ composer install
             ],
         ],
     ];
-   ```
+    ```
    
 5. 编辑 \environments\dev\frontend\web\robots.txt、\environments\prod\frontend\web\robots.txt
 
-   ```
+    ```
     User-agent: *
     Disallow: /frontend/web
     Disallow: /backend/web
     Disallow: /api/web
     Disallow: /rpc/web
-   ```
+    ```
 
 6. 打开控制台终端，执行 `init` 命令并选择 `dev` 作为环境。
 
-   ```
-   /path/to/php-bin/php /path/to/yii-application/init
-   ```
-
-   如果使用脚本自动化，可以在非交互模式下执行 `init` 。
-
-   ```
-   /path/to/php-bin/php /path/to/yii-application/init --env=Production --overwrite=All
-   ```
+    ```
+    /path/to/php-bin/php /path/to/yii-application/init
+    ```
+    
+    如果使用脚本自动化，可以在非交互模式下执行 `init` 。
+    
+    ```
+    /path/to/php-bin/php /path/to/yii-application/init --env=Production --overwrite=All
+    ```
 
 7. 创建一个新的数据库，并相应地调整 `common/config/main-local.php` 中的 `components['db']` 配置。
 
@@ -161,10 +161,10 @@ composer install
     - 对于前端 `/path/to/yii-application/frontend/web/` 并且使用URL `http://y2aa.test/`
     - 对于后端 `/path/to/yii-application/backend/web/` 并且使用URL `http://y2aa.test/backend/`
     - 对于远程过程调用 `/path/to/yii-application/rpc/web/` 并且使用URL `http://y2aa.test/rpc/`
-
+    
     对于Apache，使用如下配置：
-
-   ```Apache
+    
+    ```Apache
     <VirtualHost *:80>
         ServerName y2aa.test
     
@@ -265,15 +265,15 @@ composer install
             RewriteRule ^ index.php [L]
         </Directory>
     </VirtualHost>
-   ```
-
-   Nginx使用如下配置：
-
-   ```Nginx
+    ```
+    
+    Nginx使用如下配置：
+    
+    ```Nginx
     server {
         listen 80;
         server_name y2aa.test;
-
+    
         root /path/to/yii-application;
     
         #error_log /path/to/yii-application/log/y2aa.test.error.log warn;
@@ -408,18 +408,18 @@ composer install
             deny all;
         }
     }
-   ```
+    ```
 
-5. 更改主机文件以将域指向您的服务器。
+10. 更改主机文件以将域指向您的服务器。
 
-   - Windows: `c:\Windows\System32\Drivers\etc\hosts`
-   - Linux: `/etc/hosts`
-
-   添加以下行：
-
-   ```
-   127.0.0.1   y2aa.test
-   ```
+    - Windows: `c:\Windows\System32\Drivers\etc\hosts`
+    - Linux: `/etc/hosts`
+    
+    添加以下行：
+    
+    ```
+    127.0.0.1   y2aa.test
+    ```
 
 要登录应用程序，您需要先注册您的电子邮件地址，用户名和密码。
 然后，您可以随时使用相同的电子邮件地址和密码登录应用程序。
@@ -438,27 +438,27 @@ composer install
 1. 安装 [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 2. 安装 [Vagrant](https://www.vagrantup.com/downloads.html)
 3. 创建 GitHub [personal API token](https://github.com/blog/1509-personal-api-tokens)
-3. 准备项目:
+4. 准备项目:
    
-   ```bash
-   git clone https://github.com/shuijingwan/yii2-app-advanced.git
-   cd yii2-app-advanced/vagrant/config
-   cp vagrant-local.example.yml vagrant-local.yml
-   ```
+    ```bash
+    git clone https://github.com/shuijingwan/yii2-app-advanced.git
+    cd yii2-app-advanced/vagrant/config
+    cp vagrant-local.example.yml vagrant-local.yml
+    ```
    
-4. 将您的GitHub个人API令牌放置到 `vagrant-local.yml`
-5. 将目录更改为项目根目录：
+5. 将您的GitHub个人API令牌放置到 `vagrant-local.yml`
+6. 将目录更改为项目根目录：
 
-   ```bash
-   cd yii2-app-advanced
-   ```
+    ```bash
+    cd yii2-app-advanced
+    ```
 
-5. 执行如下命令：
+7. 执行如下命令：
 
-   ```bash
-   vagrant plugin install vagrant-hostmanager
-   vagrant up
-   ```
+    ```bash
+    vagrant plugin install vagrant-hostmanager
+    vagrant up
+    ```
    
 等待完成后，在浏览器中访问如下URL即可
 
@@ -482,19 +482,19 @@ composer install
 6. 将您的GitHub个人API令牌放置到 `vagrant-local.yml`
 7. 添加如下代码到 [hosts 文件](https://en.wikipedia.org/wiki/Hosts_(file)):
    
-   ```
-   192.168.83.137 y2aa-api.test
-   192.168.83.137 y2aa-frontend.test
-   192.168.83.137 y2aa-backend.test
-   192.168.83.137 y2aa-rpc.test
-   ```
+    ```
+    192.168.83.137 y2aa-api.test
+    192.168.83.137 y2aa-frontend.test
+    192.168.83.137 y2aa-backend.test
+    192.168.83.137 y2aa-rpc.test
+    ```
 
 8. 打开终端 (`cmd.exe`), **切换路径至项目根目录** 并且执行如下命令:
 
-   ```bash
-   vagrant plugin install vagrant-hostmanager
-   vagrant up
-   ```
+    ```bash
+    vagrant plugin install vagrant-hostmanager
+    vagrant up
+    ```
    
    (猛击 [这里](http://www.wikihow.com/Change-Directories-in-Command-Prompt) 查看如何在命令提示符中更改目录) 
 

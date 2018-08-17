@@ -77,37 +77,37 @@ vendor/bin/codecept run -- -c frontend
 
 1. 重命名 `frontend/tests/acceptance.suite.yml.example` 为 `frontend/tests/acceptance.suite.yml` 以启用套件配置
 
-1. 在 `composer.json` 中替换 `codeception/base` 包为 `codeception/codeception` 以安装Codeception的全部功能
+2. 在 `composer.json` 中替换 `codeception/base` 包为 `codeception/codeception` 以安装Codeception的全部功能
 
-1. 使用Composer更新依赖关系 
+3. 使用Composer更新依赖关系 
 
     ```
     composer update  
     ```
 
-1. 为验收测试自动生成新的支持类:
+4. 为验收测试自动生成新的支持类:
 
     ```
     vendor/bin/codecept build -- -c frontend
     ```
 
-1. 下载 [Selenium Server](http://www.seleniumhq.org/download/) 并启动:
+5. 下载 [Selenium Server](http://www.seleniumhq.org/download/) 并启动:
 
     ```
     java -jar ~/selenium-server-standalone-x.xx.x.jar
     ``` 
 
-1. 启动web服务器:
+6. 启动web服务器:
 
     ```
     php -S 127.0.0.1:8080 -t frontend/web
     ```
 
-1. 现在可以运行所有可用的测试
+7. 现在可以运行所有可用的测试
 
-   ```
-   vendor/bin/codecept run acceptance -- -c frontend
-   ```
+    ```
+    vendor/bin/codecept run acceptance -- -c frontend
+    ```
 
 ## Backend
 

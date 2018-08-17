@@ -30,15 +30,15 @@ composer install
 
 1. 打开控制台终端，执行 `init` 命令并选择 `dev` 作为环境。
 
-   ```
-   /path/to/php-bin/php /path/to/yii-application/init
-   ```
-
-   如果使用脚本自动化，可以在非交互模式下执行 `init` 。
-
-   ```
-   /path/to/php-bin/php /path/to/yii-application/init --env=Production --overwrite=All
-   ```
+    ```
+    /path/to/php-bin/php /path/to/yii-application/init
+    ```
+    
+    如果使用脚本自动化，可以在非交互模式下执行 `init` 。
+    
+    ```
+    /path/to/php-bin/php /path/to/yii-application/init --env=Production --overwrite=All
+    ```
 
 2. 创建一个新的数据库，并相应地调整 `common/config/main-local.php` 中的 `components['db']` 配置。
 
@@ -54,10 +54,10 @@ composer install
     - 对于前端 `/path/to/yii-application/frontend/web/` 并且使用URL `http://frontend.test/`
     - 对于后端 `/path/to/yii-application/backend/web/` 并且使用URL `http://backend.test/`
     - 对于远程过程调用 `/path/to/yii-application/rpc/web/` 并且使用URL `http://rpc.test/`
-
-   对于Apache，使用如下配置：
-
-   ```Apache
+    
+    对于Apache，使用如下配置：
+    
+    ```Apache
     <VirtualHost *:80>
         ServerName api.test
         DocumentRoot "/path/to/yii-application/api/web/"
@@ -137,11 +137,11 @@ composer install
             # ...other settings...
         </Directory>
     </VirtualHost>
-   ```
-
-   Nginx使用如下配置：
-
-   ```Nginx
+    ```
+    
+    Nginx使用如下配置：
+    
+    ```Nginx
     server {
         charset utf-8;
         client_max_body_size 128M;
@@ -313,21 +313,21 @@ composer install
             deny all;
         }
     }
-   ```
+    ```
 
 5. 更改主机文件以将域指向您的服务器。
 
-   - Windows: `c:\Windows\System32\Drivers\etc\hosts`
-   - Linux: `/etc/hosts`
-
-   添加以下行：
-
-   ```
-   127.0.0.1   api.test
-   127.0.0.1   frontend.test
-   127.0.0.1   backend.test
-   127.0.0.1   rpc.test
-   ```
+    - Windows: `c:\Windows\System32\Drivers\etc\hosts`
+    - Linux: `/etc/hosts`
+    
+    添加以下行：
+    
+    ```
+    127.0.0.1   api.test
+    127.0.0.1   frontend.test
+    127.0.0.1   backend.test
+    127.0.0.1   rpc.test
+    ```
 
 要登录应用程序，您需要先注册您的电子邮件地址，用户名和密码。
 然后，您可以随时使用相同的电子邮件地址和密码登录应用程序。
@@ -346,27 +346,27 @@ composer install
 1. 安装 [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 2. 安装 [Vagrant](https://www.vagrantup.com/downloads.html)
 3. 创建 GitHub [personal API token](https://github.com/blog/1509-personal-api-tokens)
-3. 准备项目:
+4. 准备项目:
    
-   ```bash
-   git clone https://github.com/shuijingwan/yii2-app-advanced.git
-   cd yii2-app-advanced/vagrant/config
-   cp vagrant-local.example.yml vagrant-local.yml
-   ```
+    ```bash
+    git clone https://github.com/shuijingwan/yii2-app-advanced.git
+    cd yii2-app-advanced/vagrant/config
+    cp vagrant-local.example.yml vagrant-local.yml
+    ```
    
-4. 将您的GitHub个人API令牌放置到 `vagrant-local.yml`
-5. 将目录更改为项目根目录：
+5. 将您的GitHub个人API令牌放置到 `vagrant-local.yml`
+6. 将目录更改为项目根目录：
 
-   ```bash
-   cd yii2-app-advanced
-   ```
+    ```bash
+    cd yii2-app-advanced
+    ```
 
-5. 执行如下命令：
+7. 执行如下命令：
 
-   ```bash
-   vagrant plugin install vagrant-hostmanager
-   vagrant up
-   ```
+    ```bash
+    vagrant plugin install vagrant-hostmanager
+    vagrant up
+    ```
    
 等待完成后，在浏览器中访问如下URL即可
 
@@ -382,27 +382,27 @@ composer install
 3. 重启电脑
 4. 创建 GitHub [personal API token](https://github.com/blog/1509-personal-api-tokens)
 5. 准备项目:
-   * 下载 [yii2-app-advanced](https://github.com/yiisoft/yii2-app-advanced/archive/master.zip)
-   * 解压
-   * 进入 `yii2-app-advanced-master/vagrant/config` 文件夹
-   * 重命名 `vagrant-local.example.yml` 为 `vagrant-local.yml`
+    * 下载 [yii2-app-advanced](https://github.com/yiisoft/yii2-app-advanced/archive/master.zip)
+    * 解压
+    * 进入 `yii2-app-advanced-master/vagrant/config` 文件夹
+    * 重命名 `vagrant-local.example.yml` 为 `vagrant-local.yml`
 
 6. 将您的GitHub个人API令牌放置到 `vagrant-local.yml`
 7. 添加如下代码到 [hosts 文件](https://en.wikipedia.org/wiki/Hosts_(file)):
    
-   ```
-   192.168.83.137 y2aa-api.test
-   192.168.83.137 y2aa-frontend.test
-   192.168.83.137 y2aa-backend.test
-   192.168.83.137 y2aa-rpc.test
-   ```
+    ```
+    192.168.83.137 y2aa-api.test
+    192.168.83.137 y2aa-frontend.test
+    192.168.83.137 y2aa-backend.test
+    192.168.83.137 y2aa-rpc.test
+    ```
 
 8. 打开终端 (`cmd.exe`), **切换路径至项目根目录** 并且执行如下命令:
 
-   ```bash
-   vagrant plugin install vagrant-hostmanager
-   vagrant up
-   ```
+    ```bash
+    vagrant plugin install vagrant-hostmanager
+    vagrant up
+    ```
    
    (猛击 [这里](http://www.wikihow.com/Change-Directories-in-Command-Prompt) 查看如何在命令提示符中更改目录) 
 
