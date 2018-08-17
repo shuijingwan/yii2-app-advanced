@@ -162,6 +162,8 @@ composer install
     - 对于后端 `/path/to/yii-application/backend/web/` 并且使用URL `http://y2aa.test/backend/`
     - 对于远程过程调用 `/path/to/yii-application/rpc/web/` 并且使用URL `http://y2aa.test/rpc/`
     
+10. 设置Web服务器的配置：
+    
     对于Apache，使用如下配置：
     
     ```
@@ -410,7 +412,7 @@ composer install
     }
     ```
 
-10. 更改主机文件以将域指向您的服务器。
+11. 更改主机文件以将域指向您的服务器。
 
     - Windows: `c:\Windows\System32\Drivers\etc\hosts`
     - Linux: `/etc/hosts`
