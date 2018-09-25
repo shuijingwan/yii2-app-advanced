@@ -11,10 +11,14 @@ use yii\helpers\ArrayHelper;
 
 class Page extends \common\models\Page
 {
-    const STATUS_DELETED = -1; //状态：删除
     const STATUS_DISABLED = 0; //状态：禁用
     const STATUS_DRAFT = 1; //状态：草稿
     const STATUS_PUBLISHED = 2; //状态：发布
+
+    const IS_DELETED_NO = 0; //是否被删除：否
+    const IS_DELETED_YES = 1; //是否被删除：是
+
+    const DELETED_AT_DEFAULT = 0; //删除时间：默认值
 
     const SCENARIO_CREATE = 'create';
 
@@ -29,7 +33,6 @@ class Page extends \common\models\Page
                 'attributes' => [
                     self::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
                     self::EVENT_BEFORE_UPDATE => 'updated_at',
-                    SoftDeleteBehavior::EVENT_BEFORE_SOFT_DELETE => 'updated_at',
                 ]
             ],
             'slug' => [
@@ -45,7 +48,10 @@ class Page extends \common\models\Page
             'softDeleteBehavior' => [
                 'class' => SoftDeleteBehavior::className(),
                 'softDeleteAttributeValues' => [
-                    'status' => self::STATUS_DELETED
+                    'is_deleted' => self::IS_DELETED_YES,
+                    'deleted_at' => function ($model) {
+                        return time();
+                    },
                 ],
             ],
         ];
@@ -71,7 +77,9 @@ class Page extends \common\models\Page
             [['title', 'body'], 'required'],
             [['slug'], 'unique'],
             ['view', 'default', 'value' => 0],
+            ['is_deleted', 'default', 'value' => self::IS_DELETED_NO],
             ['status', 'default', 'value' => self::STATUS_DRAFT],
+            ['deleted_at', 'default', 'value' => self::DELETED_AT_DEFAULT],
         ];
         $parentRules = parent::rules();
 

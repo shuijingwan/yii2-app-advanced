@@ -13,9 +13,11 @@ use Yii;
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $email
- * @property int $status 状态，-1：删除；0：禁用；1：启用
+ * @property int $status 状态，0：禁用；1：启用
+ * @property int $is_deleted 是否被删除，0：否；1：是
  * @property int $created_at 创建时间
  * @property int $updated_at 更新时间
+ * @property int $deleted_at 删除时间
  */
 class User extends \yii\db\ActiveRecord
 {
@@ -34,11 +36,11 @@ class User extends \yii\db\ActiveRecord
     {
         return [
             [['username', 'auth_key', 'password_hash', 'email'], 'required'],
-            [['status', 'created_at', 'updated_at'], 'integer'],
+            [['status', 'is_deleted', 'created_at', 'updated_at', 'deleted_at'], 'integer'],
             [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
-            [['username'], 'unique'],
-            [['email'], 'unique'],
+            [['username', 'is_deleted', 'deleted_at'], 'unique', 'targetAttribute' => ['username', 'is_deleted', 'deleted_at']],
+            [['email', 'is_deleted', 'deleted_at'], 'unique', 'targetAttribute' => ['email', 'is_deleted', 'deleted_at']],
             [['password_reset_token'], 'unique'],
         ];
     }
@@ -56,8 +58,10 @@ class User extends \yii\db\ActiveRecord
             'password_reset_token' => Yii::t('model/user', 'Password Reset Token'),
             'email' => Yii::t('model/user', 'Email'),
             'status' => Yii::t('model/user', 'Status'),
+            'is_deleted' => Yii::t('model/user', 'Is Deleted'),
             'created_at' => Yii::t('model/user', 'Created At'),
             'updated_at' => Yii::t('model/user', 'Updated At'),
+            'deleted_at' => Yii::t('model/user', 'Deleted At'),
         ];
     }
 

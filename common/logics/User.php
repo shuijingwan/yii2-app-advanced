@@ -25,9 +25,13 @@ use yii\helpers\ArrayHelper;
  */
 class User extends \common\models\User implements IdentityInterface
 {
-    const STATUS_DELETED = -1; //状态：删除
     const STATUS_DISABLED = 0; //状态：禁用
     const STATUS_ENABLED = 1; //状态：启用
+
+    const IS_DELETED_NO = 0; //是否被删除：否
+    const IS_DELETED_YES = 1; //是否被删除：是
+
+    const DELETED_AT_DEFAULT = 0; //删除时间：默认值
 
     /**
      * @inheritdoc
@@ -40,13 +44,15 @@ class User extends \common\models\User implements IdentityInterface
                 'attributes' => [
                     self::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
                     self::EVENT_BEFORE_UPDATE => 'updated_at',
-                    SoftDeleteBehavior::EVENT_BEFORE_SOFT_DELETE => 'updated_at',
                 ]
             ],
             'softDeleteBehavior' => [
                 'class' => SoftDeleteBehavior::className(),
                 'softDeleteAttributeValues' => [
-                    'status' => self::STATUS_DELETED
+                    'is_deleted' => self::IS_DELETED_YES,
+                    'deleted_at' => function ($model) {
+                        return time();
+                    },
                 ],
             ],
         ];
@@ -58,8 +64,10 @@ class User extends \common\models\User implements IdentityInterface
     public function rules()
     {
         $rules = [
+            ['is_deleted', 'default', 'value' => self::IS_DELETED_NO],
             ['status', 'default', 'value' => self::STATUS_ENABLED],
-            ['status', 'in', 'range' => [self::STATUS_DELETED, self::STATUS_DISABLED, self::STATUS_ENABLED]],
+            ['status', 'in', 'range' => [self::STATUS_DISABLED, self::STATUS_ENABLED]],
+            ['deleted_at', 'default', 'value' => self::DELETED_AT_DEFAULT],
         ];
         $parentRules = parent::rules();
 
