@@ -9,10 +9,14 @@ use Yii;
  */
 class Page extends Model
 {
-    const STATUS_DELETED = -1; //状态：删除
     const STATUS_DISABLED = 0; //状态：禁用
     const STATUS_DRAFT = 1; //状态：草稿
     const STATUS_PUBLISHED = 2; //状态：发布
+
+    const IS_DELETED_NO = 0; //是否被删除：否
+    const IS_DELETED_YES = 1; //是否被删除：是
+
+    const DELETED_AT_DEFAULT = 0; //删除时间：默认值
 
     const CONTROLLER_ID = 'page'; //控制器ID
 

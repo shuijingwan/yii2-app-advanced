@@ -32,7 +32,7 @@ class ViewAction extends Action
         }
 
         /* 判断状态，如果为删除，则返回失败 */
-        if ($model->status === $model::STATUS_DELETED) {
+        if ($model->is_deleted === $model::IS_DELETED_YES) {
             return ['code' => 20807, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '20807'), ['id' => $id]))];
         }
 
