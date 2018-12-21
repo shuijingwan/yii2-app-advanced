@@ -35,13 +35,13 @@ class DeleteAction extends Action
 
         /* 判断状态，如果为删除，则返回失败 */
         if ($model->is_deleted === $model::IS_DELETED_YES) {
-            return ['code' => 20807, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '20807'), ['id' => $id]))];
+            return ['code' => 224007, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '224007'), ['id' => $id]))];
         }
 
         if ($model->softDelete() === false) {
             throw new ServerErrorHttpException('Failed to delete the object for unknown reason.');
         }
 
-        return ['code' => 10000, 'message' => Yii::t('success', '10807')];
+        return ['code' => 10000, 'message' => Yii::t('success', '124007')];
     }
 }

@@ -53,6 +53,6 @@ class Action extends \yii\rest\Action
             return $model;
         }
 
-        throw new NotFoundHttpException(Yii::t('error', Yii::t('error', Yii::t('error', '20802'), ['id' => $id])), 20802);
+        throw new NotFoundHttpException(Yii::t('error', Yii::t('error', Yii::t('error', '224002'), ['id' => $id])), 224002);
     }
 }

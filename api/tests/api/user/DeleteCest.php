@@ -45,7 +45,7 @@ class DeleteCest
         // 检查响应的数据
         $I->seeResponseContainsJson([
             'code' => 10000,
-            'message' => Yii::t('success', '10005'),
+            'message' => Yii::t('success', '126005'),
         ]);
     }
 
@@ -63,7 +63,7 @@ class DeleteCest
         $I->seeXmlResponseMatchesXpath('//message');
         // 检查响应的数据
         $I->seeXmlResponseIncludes(Xml::toXml(['code' => 10000]));
-        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('success', '10005')]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('success', '126005')]));
     }
 
     // 获取用户详情，使用不存在的ID(用户ID：{id}，不存在、JSON响应)
@@ -80,8 +80,8 @@ class DeleteCest
         $I->seeResponseJsonMatchesJsonPath('$.message');
         // 检查响应的数据
         $I->seeResponseContainsJson([
-            'code' => 20002,
-            'message' => Yii::t('error', Yii::t('error', Yii::t('error', '20002'), ['id' => $id])),
+            'code' => 226002,
+            'message' => Yii::t('error', Yii::t('error', Yii::t('error', '226002'), ['id' => $id])),
         ]);
     }
 
@@ -98,7 +98,7 @@ class DeleteCest
         $I->seeXmlResponseMatchesXpath('//code');
         $I->seeXmlResponseMatchesXpath('//message');
         // 检查响应的数据
-        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 20002]));
-        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('error', Yii::t('error', Yii::t('error', '20002'), ['id' => $id]))]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 226002]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('error', Yii::t('error', Yii::t('error', '226002'), ['id' => $id]))]));
     }
 }

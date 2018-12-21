@@ -45,7 +45,7 @@ class UpdateAction extends Action
 
         /* 判断状态，如果为删除，则返回失败 */
         if ($model->is_deleted === $model::IS_DELETED_YES) {
-            return ['code' => 20807, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '20807'), ['id' => $id]))];
+            return ['code' => 224007, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '224007'), ['id' => $id]))];
         }
 
         $model->scenario = $this->scenario;
@@ -58,12 +58,12 @@ class UpdateAction extends Action
                     $firstErrors = $message;
                     break;
                 }
-                return ['code' => 20004, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '20004'), ['firstErrors' => $firstErrors]))];
+                return ['code' => 226004, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '226004'), ['firstErrors' => $firstErrors]))];
             } elseif (!$model->hasErrors()) {
                 throw new ServerErrorHttpException('Failed to update the object for unknown reason.');
             }
         }
 
-        return ['code' => 10000, 'message' => Yii::t('success', '10806'), 'data' => $model];
+        return ['code' => 10000, 'message' => Yii::t('success', '124006'), 'data' => $model];
     }
 }

@@ -53,13 +53,13 @@ class Serializer extends \yii\rest\Serializer
         ];
 
         if (empty($result['items'])) {
-            return ['code' => 20001, 'message' => Yii::t('error', '20001')];
+            return ['code' => 226001, 'message' => Yii::t('error', '226001')];
         }
 
         if ($pagination !== false) {
-            return ['code' => 10000, 'message' => Yii::t('success', '10001'), 'data' => array_merge($result, $this->serializePagination($pagination))];
+            return ['code' => 10000, 'message' => Yii::t('success', '126001'), 'data' => array_merge($result, $this->serializePagination($pagination))];
         }
 
-        return ['code' => 10000, 'message' => Yii::t('success', '10001'), 'data' => $result];
+        return ['code' => 10000, 'message' => Yii::t('success', '126001'), 'data' => $result];
     }
 }

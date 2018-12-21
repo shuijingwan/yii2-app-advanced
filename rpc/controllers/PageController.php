@@ -54,11 +54,11 @@ class PageController extends ServerController
                 $firstErrors = $message;
                 break;
             }
-            return ['code' => 25004, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '25004'), ['firstErrors' => $firstErrors]))];
+            return ['code' => 232004, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '232004'), ['firstErrors' => $firstErrors]))];
         } elseif (!$model->hasErrors()) {
             throw new ServerErrorHttpException('Failed to create the object for unknown reason1.');
         }
 
-        return ['code' => 10000, 'message' => Yii::t('success', '15805'), 'data' => $data];
+        return ['code' => 10000, 'message' => Yii::t('success', '130005'), 'data' => $data];
     }
 }

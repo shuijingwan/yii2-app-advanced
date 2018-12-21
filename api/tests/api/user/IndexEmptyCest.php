@@ -29,8 +29,8 @@ class IndexEmptyCest
         $I->seeResponseJsonMatchesJsonPath('$.message');
         // 检查响应的数据
         $I->seeResponseContainsJson([
-            'code' => 20001,
-            'message' => Yii::t('error', '20001'),
+            'code' => 226001,
+            'message' => Yii::t('error', '226001'),
         ]);
     }
 
@@ -46,7 +46,7 @@ class IndexEmptyCest
         $I->seeXmlResponseMatchesXpath('//code');
         $I->seeXmlResponseMatchesXpath('//message');
         // 检查响应的数据
-        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 20001]));
-        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('error', '20001')]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 226001]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('error', '226001')]));
     }
 }

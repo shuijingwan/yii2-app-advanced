@@ -49,7 +49,7 @@ class ViewCest
         // 检查响应的数据
         $I->seeResponseContainsJson([
             'code' => 10000,
-            'message' => Yii::t('success', '10002'),
+            'message' => Yii::t('success', '126002'),
         ]);
     }
 
@@ -68,7 +68,7 @@ class ViewCest
         $I->seeXmlResponseMatchesXpath('//data');
         // 检查响应的数据
         $I->seeXmlResponseIncludes(Xml::toXml(['code' => 10000]));
-        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('success', '10002')]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('success', '126002')]));
     }
 
     // 获取用户详情，使用不存在的ID(用户ID：{id}，不存在、JSON响应)
@@ -85,8 +85,8 @@ class ViewCest
         $I->seeResponseJsonMatchesJsonPath('$.message');
         // 检查响应的数据
         $I->seeResponseContainsJson([
-            'code' => 20002,
-            'message' => Yii::t('error', Yii::t('error', Yii::t('error', '20002'), ['id' => $id])),
+            'code' => 226002,
+            'message' => Yii::t('error', Yii::t('error', Yii::t('error', '226002'), ['id' => $id])),
         ]);
     }
 
@@ -103,8 +103,8 @@ class ViewCest
         $I->seeXmlResponseMatchesXpath('//code');
         $I->seeXmlResponseMatchesXpath('//message');
         // 检查响应的数据
-        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 20002]));
-        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('error', Yii::t('error', Yii::t('error', '20002'), ['id' => $id]))]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 226002]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('error', Yii::t('error', Yii::t('error', '226002'), ['id' => $id]))]));
     }
 
     // 获取用户详情(用户ID：{id}，的状态为已禁用、JSON响应)
@@ -121,8 +121,8 @@ class ViewCest
         $I->seeResponseJsonMatchesJsonPath('$.message');
         // 检查响应的数据
         $I->seeResponseContainsJson([
-            'code' => 20804,
-            'message' => Yii::t('error', Yii::t('error', Yii::t('error', '20804'), ['id' => $id])),
+            'code' => 224004,
+            'message' => Yii::t('error', Yii::t('error', Yii::t('error', '224004'), ['id' => $id])),
         ]);
     }
 
@@ -139,7 +139,7 @@ class ViewCest
         $I->seeXmlResponseMatchesXpath('//code');
         $I->seeXmlResponseMatchesXpath('//message');
         // 检查响应的数据
-        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 20804]));
-        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('error', Yii::t('error', Yii::t('error', '20804'), ['id' => $id]))]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 224004]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('error', Yii::t('error', Yii::t('error', '224004'), ['id' => $id]))]));
     }
 }

@@ -31,6 +31,6 @@ class ViewAction extends Action
             call_user_func($this->checkAccess, $this->id, $model);
         }
 
-        return ['code' => 10000, 'message' => Yii::t('success', '10802'), 'data' => $model];
+        return ['code' => 10000, 'message' => Yii::t('success', '124002'), 'data' => $model];
     }
 }

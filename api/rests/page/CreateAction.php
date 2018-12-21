@@ -80,7 +80,7 @@ class CreateAction extends Action
                 $firstErrors = $message;
                 break;
             }
-            return ['code' => 20004, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '20004'), ['firstErrors' => $firstErrors]))];
+            return ['code' => 226004, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '226004'), ['firstErrors' => $firstErrors]))];
         } elseif (!$model->hasErrors()) {
             throw new ServerErrorHttpException('Failed to create the object for unknown reason.');
         }

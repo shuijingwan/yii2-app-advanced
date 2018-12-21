@@ -48,7 +48,7 @@ class IndexCest
         // 检查响应的数据
         $I->seeResponseContainsJson([
             'code' => 10000,
-            'message' => Yii::t('success', '10001'),
+            'message' => Yii::t('success', '126001'),
         ]);
     }
 
@@ -69,6 +69,6 @@ class IndexCest
         $I->seeXmlResponseMatchesXpath('//data/_meta');
         // 检查响应的数据
         $I->seeXmlResponseIncludes(Xml::toXml(['code' => 10000]));
-        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('success', '10001')]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('success', '126001')]));
     }
 }

@@ -53,7 +53,7 @@ class UpdateCest
         // 检查响应的数据
         $I->seeResponseContainsJson([
             'code' => 10000,
-            'message' => Yii::t('success', '10004'),
+            'message' => Yii::t('success', '126004'),
             'data' => [
                 'email' => $data['email'],
                 'status' => $data['status'],
@@ -83,7 +83,7 @@ class UpdateCest
         $I->seeXmlResponseMatchesXpath('//data//status');
         // 检查响应的数据
         $I->seeXmlResponseIncludes(Xml::toXml(['code' => 10000]));
-        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('success', '10004')]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('success', '126004')]));
         $I->seeXmlResponseIncludes(Xml::toXml(['email' => $data['email']]));
         $I->seeXmlResponseIncludes(Xml::toXml(['status' => $data['status']]));
     }
@@ -106,7 +106,7 @@ class UpdateCest
         $I->seeResponseJsonMatchesJsonPath('$.code');
         $I->seeResponseJsonMatchesJsonPath('$.message');
         // 检查响应的数据
-        $I->seeResponseContainsJson(['code' => 20002]);
+        $I->seeResponseContainsJson(['code' => 226002]);
         $I->seeResponseContainsJson(['message' => 'User ID: 9999, does not exist']);
     }
 
@@ -128,7 +128,7 @@ class UpdateCest
         $I->seeXmlResponseMatchesXpath('//code');
         $I->seeXmlResponseMatchesXpath('//message');
         // 检查响应的数据
-        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 20002]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 226002]));
         $I->seeXmlResponseIncludes(Xml::toXml(['message' => 'User ID: 9999, does not exist']));
     }
 
@@ -146,7 +146,7 @@ class UpdateCest
         $I->seeResponseJsonMatchesJsonPath('$.code');
         $I->seeResponseJsonMatchesJsonPath('$.message');
         // 检查响应的数据
-        $I->seeResponseContainsJson(['code' => 20004]);
+        $I->seeResponseContainsJson(['code' => 226004]);
         $I->seeResponseContainsJson(['message' => 'Data validation failed: Email cannot be blank.']);
     }
 
@@ -164,7 +164,7 @@ class UpdateCest
         $I->seeXmlResponseMatchesXpath('//code');
         $I->seeXmlResponseMatchesXpath('//message');
         // 检查响应的数据
-        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 20004]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 226004]));
         $I->seeXmlResponseIncludes(Xml::toXml(['message' => 'Data validation failed: Email cannot be blank.']));
     }
 
@@ -186,7 +186,7 @@ class UpdateCest
         $I->seeResponseJsonMatchesJsonPath('$.code');
         $I->seeResponseJsonMatchesJsonPath('$.message');
         // 检查响应的数据
-        $I->seeResponseContainsJson(['code' => 20004]);
+        $I->seeResponseContainsJson(['code' => 226004]);
         $I->seeResponseContainsJson(['message' => 'Data validation failed: Email is not a valid email address.']);
     }
 
@@ -208,7 +208,7 @@ class UpdateCest
         $I->seeXmlResponseMatchesXpath('//code');
         $I->seeXmlResponseMatchesXpath('//message');
         // 检查响应的数据
-        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 20004]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 226004]));
         $I->seeXmlResponseIncludes(Xml::toXml(['message' => 'Data validation failed: Email is not a valid email address.']));
     }
 
@@ -230,7 +230,7 @@ class UpdateCest
         $I->seeResponseJsonMatchesJsonPath('$.code');
         $I->seeResponseJsonMatchesJsonPath('$.message');
         // 检查响应的数据
-        $I->seeResponseContainsJson(['code' => 20004]);
+        $I->seeResponseContainsJson(['code' => 226004]);
         $I->seeResponseContainsJson(['message' => 'Data validation failed: Email "nicolas.dianna@hotmail.com" has already been taken.']);
     }
 
@@ -252,7 +252,7 @@ class UpdateCest
         $I->seeXmlResponseMatchesXpath('//code');
         $I->seeXmlResponseMatchesXpath('//message');
         // 检查响应的数据
-        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 20004]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 226004]));
         $I->seeXmlResponseIncludes(Xml::toXml(['message' => 'Data validation failed: Email "nicolas.dianna@hotmail.com" has already been taken.']));
     }
 
@@ -274,7 +274,7 @@ class UpdateCest
         $I->seeResponseJsonMatchesJsonPath('$.code');
         $I->seeResponseJsonMatchesJsonPath('$.message');
         // 检查响应的数据
-        $I->seeResponseContainsJson(['code' => 20004]);
+        $I->seeResponseContainsJson(['code' => 226004]);
         $I->seeResponseContainsJson(['message' => 'Data validation failed: Status is invalid.']);
     }
 
@@ -296,7 +296,7 @@ class UpdateCest
         $I->seeXmlResponseMatchesXpath('//code');
         $I->seeXmlResponseMatchesXpath('//message');
         // 检查响应的数据
-        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 20004]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 226004]));
         $I->seeXmlResponseIncludes(Xml::toXml(['message' => 'Data validation failed: Status is invalid.']));
     }
 

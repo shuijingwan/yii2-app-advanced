@@ -52,7 +52,7 @@ class CreateCest
         // 检查响应的数据
         $I->seeResponseContainsJson([
             'code' => 10000,
-            'message' => Yii::t('success', '10003'),
+            'message' => Yii::t('success', '126003'),
             'data' => [
                 'username' => $data['username'],
                 'email' => $data['email'],
@@ -81,7 +81,7 @@ class CreateCest
         $I->seeXmlResponseMatchesXpath('//data//email');
         // 检查响应的数据
         $I->seeXmlResponseIncludes(Xml::toXml(['code' => 10000]));
-        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('success', '10003')]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['message' => Yii::t('success', '126003')]));
         $I->seeXmlResponseIncludes(Xml::toXml(['username' => $data['username']]));
         $I->seeXmlResponseIncludes(Xml::toXml(['email' => $data['email']]));
     }
@@ -99,7 +99,7 @@ class CreateCest
         $I->seeResponseJsonMatchesJsonPath('$.code');
         $I->seeResponseJsonMatchesJsonPath('$.message');
         // 检查响应的数据
-        $I->seeResponseContainsJson(['code' => 20004]);
+        $I->seeResponseContainsJson(['code' => 226004]);
         $I->seeResponseContainsJson(['message' => 'Data validation failed: Username cannot be blank.']);
     }
 
@@ -116,7 +116,7 @@ class CreateCest
         $I->seeXmlResponseMatchesXpath('//code');
         $I->seeXmlResponseMatchesXpath('//message');
         // 检查响应的数据
-        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 20004]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 226004]));
         $I->seeXmlResponseIncludes(Xml::toXml(['message' => 'Data validation failed: Username cannot be blank.']));
     }
 
@@ -137,7 +137,7 @@ class CreateCest
         $I->seeResponseJsonMatchesJsonPath('$.code');
         $I->seeResponseJsonMatchesJsonPath('$.message');
         // 检查响应的数据
-        $I->seeResponseContainsJson(['code' => 20004]);
+        $I->seeResponseContainsJson(['code' => 226004]);
         $I->seeResponseContainsJson(['message' => 'Data validation failed: Email is not a valid email address.']);
     }
 
@@ -158,7 +158,7 @@ class CreateCest
         $I->seeXmlResponseMatchesXpath('//code');
         $I->seeXmlResponseMatchesXpath('//message');
         // 检查响应的数据
-        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 20004]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 226004]));
         $I->seeXmlResponseIncludes(Xml::toXml(['message' => 'Data validation failed: Email is not a valid email address.']));
     }
 
@@ -179,7 +179,7 @@ class CreateCest
         $I->seeResponseJsonMatchesJsonPath('$.code');
         $I->seeResponseJsonMatchesJsonPath('$.message');
         // 检查响应的数据
-        $I->seeResponseContainsJson(['code' => 20004]);
+        $I->seeResponseContainsJson(['code' => 226004]);
         $I->seeResponseContainsJson(['message' => 'Data validation failed: Username "troy.becker" has already been taken.']);
     }
 
@@ -200,7 +200,7 @@ class CreateCest
         $I->seeXmlResponseMatchesXpath('//code');
         $I->seeXmlResponseMatchesXpath('//message');
         // 检查响应的数据
-        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 20004]));
+        $I->seeXmlResponseIncludes(Xml::toXml(['code' => 226004]));
         $I->seeXmlResponseIncludes(Xml::toXml(['message' => 'Data validation failed: Username "troy.becker" has already been taken.']));
     }
 }

@@ -46,7 +46,7 @@ class IndexAction extends \yii\rest\IndexAction
                         $firstErrors = $message;
                         break;
                     }
-                    return ['code' => 20803, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '20803'), ['firstErrors' => $firstErrors]))];
+                    return ['code' => 224003, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '224003'), ['firstErrors' => $firstErrors]))];
                 }
             }
         }
