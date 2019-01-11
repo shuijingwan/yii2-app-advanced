@@ -50,11 +50,12 @@ class PageController extends ServerController
         if ($model->load($data, '') && $model->save()) {
             $data = $model->attributes;
         } elseif ($model->hasErrors()) {
+            $firstError = '';
             foreach ($model->getFirstErrors() as $message) {
-                $firstErrors = $message;
+                $firstError = $message;
                 break;
             }
-            return ['code' => 232004, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '232004'), ['firstErrors' => $firstErrors]))];
+            return ['code' => 232004, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '232004'), ['first_error' => $firstError]))];
         } elseif (!$model->hasErrors()) {
             throw new ServerErrorHttpException('Failed to create the object for unknown reason1.');
         }

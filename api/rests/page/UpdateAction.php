@@ -54,11 +54,12 @@ class UpdateAction extends Action
             if ($model->hasErrors()) {
                 $response = Yii::$app->getResponse();
                 $response->setStatusCode(422, 'Data Validation Failed.');
+                $firstError = '';
                 foreach ($model->getFirstErrors() as $message) {
-                    $firstErrors = $message;
+                    $firstError = $message;
                     break;
                 }
-                return ['code' => 226004, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '226004'), ['firstErrors' => $firstErrors]))];
+                return ['code' => 226004, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '226004'), ['first_error' => $firstError]))];
             } elseif (!$model->hasErrors()) {
                 throw new ServerErrorHttpException('Failed to update the object for unknown reason.');
             }

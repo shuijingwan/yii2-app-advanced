@@ -42,11 +42,12 @@ class IndexAction extends \yii\rest\IndexAction
             if ($this->dataFilter->load($requestParams)) {
                 $filter = $this->dataFilter->build();
                 if ($filter === false) {
+                    $firstError = '';
                     foreach ($this->dataFilter->getFirstErrors() as $message) {
-                        $firstErrors = $message;
+                        $firstError = $message;
                         break;
                     }
-                    return ['code' => 224003, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '224003'), ['firstErrors' => $firstErrors]))];
+                    return ['code' => 224003, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '224003'), ['first_error' => $firstError]))];
                 }
             }
         }
