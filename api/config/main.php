@@ -52,24 +52,6 @@ return [
             ],
         ],
         'urlManager' => require __DIR__ . '/urlManager.php',
-        'i18n' => [
-            'translations' => [
-                'model/*'=> [
-                    'class' => 'yii\i18n\PhpMessageSource',
-                    'forceTranslation' => true,
-                    'basePath'=>'@common/messages',
-                    'fileMap'=>[
-                    ],
-                ],
-                '*'=> [
-                    'class' => 'yii\i18n\PhpMessageSource',
-                    'forceTranslation' => true,
-                    'basePath'=>'@api/messages',
-                    'fileMap'=>[
-                    ],
-                ],
-            ],
-        ],
         'contentNegotiator' => [
             'class' => 'yii\filters\ContentNegotiator',
             'formats' => [
