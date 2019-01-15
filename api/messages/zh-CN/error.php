@@ -1,6 +1,6 @@
 <?php
-return [
-    20000 => 'error',
+$commonMessages = require __DIR__ . '/../../../common/messages/zh-CN/error.php';
+$messages = [
     224001 => '日志列表为空',
     224002 => '日志ID：{id}，不存在',
     224003 => '数据过滤器验证失败：{first_error}',
@@ -15,3 +15,4 @@ return [
     226003 => '用户ID：{id}，的状态为已删除',
     226004 => '数据验证失败：{first_error}',
 ];
+return $commonMessages + $messages;

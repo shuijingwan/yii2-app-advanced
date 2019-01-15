@@ -1,6 +1,6 @@
 <?php
-return [
-    10000 => 'success',
+$commonMessages = require __DIR__ . '/../../../common/messages/zh-CN/success.php';
+$messages = [
     130001 => '获取日志列表成功',
     130002 => '获取日志详情成功',
     130003 => '获取页面列表成功',
@@ -14,3 +14,4 @@ return [
     132004 => '更新用户成功',
     132005 => '删除用户成功',
 ];
+return $commonMessages + $messages;

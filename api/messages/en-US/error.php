@@ -1,6 +1,6 @@
 <?php
-return [
-    20000 => 'error',
+$commonMessages = require __DIR__ . '/../../../common/messages/en-US/error.php';
+$messages = [
     224001 => 'Log list is empty',
     224002 => 'Log ID: {id}, does not exist',
     224003 => 'Data filter validation failed: {first_error}',
@@ -15,3 +15,4 @@ return [
     226003 => 'User ID: {id}, status is deleted',
     226004 => 'Data validation failed: {first_error}',
 ];
+return $commonMessages + $messages;

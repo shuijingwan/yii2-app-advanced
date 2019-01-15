@@ -1,6 +1,6 @@
 <?php
-return [
-    10000 => 'success',
+$commonMessages = require __DIR__ . '/../../../common/messages/en-US/success.php';
+$messages = [
     124001 => 'Get log list success',
     124002 => 'Get log details success',
     124003 => 'Get page list success',
@@ -14,3 +14,4 @@ return [
     126004 => 'Update user success',
     126005 => 'Delete user success',
 ];
+return $commonMessages + $messages;
