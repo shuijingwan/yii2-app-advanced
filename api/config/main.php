@@ -65,7 +65,7 @@ return [
         ],
     ],
     'as requestLog' => [
-        'class' => api\behaviors\RequestLogBehavior::class,
+        'class' => common\behaviors\RequestLogBehavior::class,
     ],
     'modules' => [
         'v1' => [

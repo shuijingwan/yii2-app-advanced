@@ -1,8 +1,10 @@
 <?php
-namespace api\behaviors;
+
+namespace common\behaviors;
 
 use Yii;
 use yii\base\Behavior;
+use yii\base\InvalidConfigException;
 
 /**
  * Class RequestLogBehavior
@@ -21,6 +23,8 @@ class RequestLogBehavior extends Behavior
 
     /**
      * @inheritdoc
+     *
+     * @throws InvalidConfigException 如果注册的解析器没有实现 [[RequestParserInterface]]
      */
     public function afterRequest($event)
     {
