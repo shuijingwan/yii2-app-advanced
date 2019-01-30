@@ -1,8 +1,8 @@
 {
-    "name": "yiisoft/yii2-app-advanced",
+    "name": "shuijingwan/yii2-app-advanced",
     "description": "Yii 2 Advanced Project Template",
-    "keywords": ["yii2", "framework", "advanced", "project template"],
-    "homepage": "http://www.yiiframework.com/",
+    "keywords": ["yii2", "framework", "advanced", "project template", "RESTful", "api", "rpc", "Hprose"],
+    "homepage": "https://github.com/shuijingwan/yii2-app-advanced",
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
@@ -14,7 +14,7 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "php": ">=7.1.0",
+        "php": ">=7.2.0",
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
