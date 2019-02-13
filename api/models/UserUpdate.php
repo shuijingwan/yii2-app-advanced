@@ -23,7 +23,7 @@ class UserUpdate extends Model
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\api\models\User', 'filter' => ['!=', 'id', $this->id]],
+            ['email', 'unique', 'targetClass' => '\api\models\User', 'filter' => ['and', ['!=', 'id', $this->id], ['is_deleted' => User::IS_DELETED_NO]]],
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
             ['status', 'integer'],
