@@ -26,6 +26,7 @@ Yii 2高级项目模板是一个最基本的 [Yii 2](http://www.yiiframework.com
     - [手动安装(多域名)](start-installation.md)
     - [手动安装(单域名)](start-installation-single-domain.md)
     - [Vagrant 安装](start-installation.md#使用vagrant安装)
+- [更新日志](change-log.md)
 - [测试](start-testing.md)
 
 应用目录结构
