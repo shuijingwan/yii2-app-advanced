@@ -52,10 +52,6 @@ class Serializer extends \yii\rest\Serializer
             $this->collectionEnvelope => $models,
         ];
 
-        if (empty($result['items'])) {
-            return ['code' => 224001, 'message' => Yii::t('error', '224001')];
-        }
-
         if ($pagination !== false) {
             return ['code' => 10000, 'message' => Yii::t('success', '124001'), 'data' => array_merge($result, $this->serializePagination($pagination))];
         }
