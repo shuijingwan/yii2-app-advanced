@@ -18,7 +18,7 @@ return [
                     'forceTranslation' => true,
                     'basePath' => '@app/messages',
                     'fileMap' => [
-                        'app' => 'app.php',
+                        'application' => 'application.php',
                         'error' => 'error.php',
                         'success' => 'success.php',
                     ],
