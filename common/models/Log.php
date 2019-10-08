@@ -17,7 +17,7 @@ use Yii;
 class Log extends \yii\db\ActiveRecord
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -25,7 +25,7 @@ class Log extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
@@ -38,7 +38,7 @@ class Log extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {
@@ -50,5 +50,14 @@ class Log extends \yii\db\ActiveRecord
             'prefix' => Yii::t('model/log', 'Prefix'),
             'message' => Yii::t('model/log', 'Message'),
         ];
+    }
+
+    /**
+     * {@inheritdoc}
+     * @return LogQuery the active query used by this AR class.
+     */
+    public static function find()
+    {
+        return new LogQuery(get_called_class());
     }
 }

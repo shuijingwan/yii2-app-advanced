@@ -2,14 +2,13 @@
 /**
  * Created by PhpStorm.
  * User: Qiang Wang
- * Date: 2018/06/21
- * Time: 15:53
+ * Date: 2019/10/08
+ * Time: 13:40
  */
 
-namespace api\modules\v1\models;
+namespace console\models;
 
-
-class Log extends \api\models\Log
+class Log extends \common\logics\Log
 {
     /**
      * {@inheritdoc}
