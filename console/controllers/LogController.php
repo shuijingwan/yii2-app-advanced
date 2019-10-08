@@ -49,7 +49,8 @@ class LogController extends Controller
         $logTime = $logItem->log_time;
 
         /* 获取服务器当前时间的前 15 天(默认值，可自定义)的值($reservedTime：保留时间，0点)，如果 $logTime 大于等于 $reservedTime，则延缓执行 10 * 60 秒，再退出 */
-        $reservedTime = strtotime("today -15 days"); // 保留时间，0点
+        $logDeleteReservedTime = Yii::$app->params['logDeleteReservedTime'];
+        $reservedTime = strtotime("today -$logDeleteReservedTime days"); // 保留时间，0点
         if ($logTime >= $reservedTime) {
             // 延缓执行 10 * 60 秒
             sleep(static::SLEEP_TIME);
