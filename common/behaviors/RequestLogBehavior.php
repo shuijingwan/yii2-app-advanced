@@ -8,7 +8,7 @@ use yii\base\InvalidConfigException;
 
 /**
  * Class RequestLogBehavior
- * @package api\behaviors
+ * @package common\behaviors
  * @author Qiang Wang <shuijingwanwq@163.com>
  * @since 1.0
  */
