@@ -27,11 +27,11 @@ class LogController extends Controller
      */
     public function actionDelete()
     {
-        /* 获取服务器当前时间，判断范围([0点，1点])，如果不在范围内，则延缓执行 10 * 60 秒，再退出 */
+        /* 获取服务器当前时间，判断范围([3点，5点))，如果不在范围内，则延缓执行 10 * 60 秒，再退出 */
         $time = time(); // 当前时间
-        $zeroTime = strtotime("today"); // 0点
-        $oneTime = strtotime("today +1 hours"); // 1点
-        if (!($time >= $zeroTime && $time <= $oneTime)) {
+        $threeTime = strtotime("today +3 hours"); // 3点
+        $fiveTime = strtotime("today +5 hours"); // 5点
+        if (!($time >= $threeTime && $time < $fiveTime)) {
             // 延缓执行 10 * 60 秒
             sleep(static::SLEEP_TIME);
 
