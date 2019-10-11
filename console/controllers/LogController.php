@@ -33,7 +33,7 @@ class LogController extends Controller
         $fiveTime = strtotime("today +5 hours"); // 5点
         if (!($time >= $threeTime && $time < $fiveTime)) {
             // 延缓执行 10 * 60 秒
-            sleep(static::SLEEP_TIME);
+            // sleep(static::SLEEP_TIME);
 
             return ExitCode::OK;
         }
@@ -42,7 +42,7 @@ class LogController extends Controller
         $logItem = Log::find()->select(['log_time'])->orderBy(['log_time' => SORT_ASC])->limit(1)->one();
         if (!isset($logItem)) {
             // 延缓执行 10 * 60 秒
-            sleep(static::SLEEP_TIME);
+            // sleep(static::SLEEP_TIME);
 
             return ExitCode::OK;
         }
@@ -53,7 +53,7 @@ class LogController extends Controller
         $reservedTime = strtotime("today -$logDeleteReservedTime days"); // 保留时间，0点
         if ($logTime >= $reservedTime) {
             // 延缓执行 10 * 60 秒
-            sleep(static::SLEEP_TIME);
+            // sleep(static::SLEEP_TIME);
 
             return ExitCode::OK;
         }
@@ -68,7 +68,7 @@ class LogController extends Controller
         /* 执行删除 SQL()，条件(日志时间 小于 $deadlineTime)，即命令行 1 次运行仅删除 1 天的日志消息，延缓执行 60 秒，再退出 */
         Log::deleteAll(['<', 'log_time', $deadlineTime]);
         // 延缓执行 60 秒
-        sleep(60);
+        // sleep(60);
         return ExitCode::OK;
     }
 }
