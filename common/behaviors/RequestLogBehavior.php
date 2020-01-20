@@ -41,13 +41,13 @@ class RequestLogBehavior extends Behavior
                 'request_body_params' => $requestBodyParams,
                 'user_id' => $userId,
                 '$_SERVER' => [
-                    'HTTP_ACCEPT_LANGUAGE' => isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '',
-                    'HTTP_ACCEPT' => $_SERVER['HTTP_ACCEPT'],
+                    'HTTP_ACCEPT_LANGUAGE' => $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? '',
+                    'HTTP_ACCEPT' => $_SERVER['HTTP_ACCEPT'] ?? '',
                     'HTTP_HOST' => $_SERVER['HTTP_HOST'],
-                    'REMOTE_ADDR' => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '',
+                    'REMOTE_ADDR' => $_SERVER['REMOTE_ADDR'] ?? '',
                     'REQUEST_URI' => $_SERVER['REQUEST_URI'],
                     'REQUEST_METHOD' => $_SERVER['REQUEST_METHOD'],
-                    'CONTENT_TYPE' => isset($_SERVER['CONTENT_TYPE']) ? $_SERVER['CONTENT_TYPE'] : '',
+                    'CONTENT_TYPE' => $_SERVER['CONTENT_TYPE'] ?? '',
                 ],
             ];
             Yii::info($message, __METHOD__);
