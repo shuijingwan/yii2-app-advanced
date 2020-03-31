@@ -59,8 +59,8 @@ return [
                 'application/xml' => yii\web\Response::FORMAT_XML,
             ],
             'languages' => [
-                'en-US',
                 'zh-CN',
+                'en-US',
             ],
         ],
     ],

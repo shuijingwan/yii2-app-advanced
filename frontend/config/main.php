@@ -39,8 +39,8 @@ return [
         'contentNegotiator' => [
             'class' => 'yii\filters\ContentNegotiator',
             'languages' => [
-                'en-US',
                 'zh-CN',
+                'en-US',
             ],
         ],
         'urlManager' => [
