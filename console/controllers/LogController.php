@@ -55,8 +55,16 @@ class LogController extends Controller
             $deadlineTime = $reservedTime;
         }
 
-        /* 执行删除 SQL()，条件(日志时间 小于 $deadlineTime)，即命令行 1 次运行仅删除 1 天的日志消息，再成功退出 */
-        Log::deleteAll(['<', 'log_time', $deadlineTime]);
+        /* 查询 100 条记录的日志时间($logTime)，条件(日志时间 小于 $deadlineTime)，基于 日志时间 升序排列，如果为空，则成功退出 */
+        $deleteLogItems = Log::find()->where(['<', 'log_time', $deadlineTime])->select(['log_time'])->orderBy(['log_time' => SORT_ASC])->limit(100)->all();
+        if (empty($deleteLogItems)) {
+            return ExitCode::OK;
+        }
+
+        /* 执行删除 SQL()，条件(日志时间 小于等于 $deadlineTime)，即命令行 1 次运行仅删除 1 天的前 100 条的日志消息，再成功退出 */
+        $count = count($deleteLogItems);
+        $deadlineTime = $deleteLogItems[$count-1]->log_time;
+        Log::deleteAll(['<=', 'log_time', $deadlineTime]);
 
         return ExitCode::OK;
     }
