@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: WangQiang
+ * User: Qiang Wang
  * Date: 2018/08/01
  * Time: 15:01
  */
@@ -9,6 +9,7 @@
 namespace rpc\controllers;
 
 use Yii;
+use rpc\models\Page;
 use yii\web\ServerErrorHttpException;
 
 /**
@@ -34,7 +35,8 @@ class PageController extends ServerController
      * 格式如下：
      * en-US
      *
-     * @return mixed
+     * @return array
+     * @throws ServerErrorHttpException
      */
     public function actionCreate(array $data, string $version = '', string $language = '')
     {
@@ -42,7 +44,7 @@ class PageController extends ServerController
             Yii::$app->language = $language;
         }
 
-        /* @var $model \yii\db\ActiveRecord */
+        /* @var $model Page */
         $model = new $this->modelClass([
             'scenario' => $this->createScenario,
         ]);
@@ -57,7 +59,7 @@ class PageController extends ServerController
             }
             return ['code' => 232004, 'message' => Yii::t('error', Yii::t('error', Yii::t('error', '232004'), ['first_error' => $firstError]))];
         } elseif (!$model->hasErrors()) {
-            throw new ServerErrorHttpException('Failed to create the object for unknown reason1.');
+            throw new ServerErrorHttpException('Failed to create the object for unknown reason.');
         }
 
         return ['code' => 10000, 'message' => Yii::t('success', '130005'), 'data' => $data];

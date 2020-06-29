@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Administrator
+ * User: Qiang Wang
  * Date: 2018/08/02
  * Time: 13:12
  */
@@ -30,7 +30,8 @@ class Model extends \yii\base\Model
      * 格式如下：
      * create
      *
-     * @return object $client 同步的 HTTP 客户端
+     * @return mixed $client 同步的 HTTP 客户端
+     * @throws \Exception
      */
     public static function client($controllerId, $actionId)
     {

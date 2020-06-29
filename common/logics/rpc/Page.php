@@ -79,7 +79,8 @@ class Page extends Model
      * 格式如下：
      * en-US
      *
-     * @return array
+     * @return mixed
+     * @throws \Exception
      */
     public function create(array $data, string $version, string $language)
     {

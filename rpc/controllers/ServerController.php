@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: WangQiang
+ * User: Qiang Wang
  * Date: 2018/08/01
  * Time: 18:02
  */
@@ -9,8 +9,8 @@
 namespace rpc\controllers;
 
 use Yii;
-use yii\web\Controller;
 use Hprose\Yii\Server;
+use yii\web\Controller;
 
 /**
  * 远程过程调用 HTTP 服务器
@@ -26,6 +26,9 @@ class ServerController extends Controller
     {
         parent::beforeAction($action);
         $server = new Server();
+        if (YII_DEBUG) {
+            $server->debug = true;
+        }
         $server->addMethod($action->actionMethod, $this, $action->controller->id . '_' . $action->id);
         $server->start();
     }

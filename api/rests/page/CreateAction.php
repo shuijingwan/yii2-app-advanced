@@ -8,8 +8,10 @@
 namespace api\rests\page;
 
 use Yii;
+use api\models\rpc\Page;
 use yii\base\Model;
 use yii\helpers\Url;
+use yii\base\InvalidConfigException;
 use yii\web\ServerErrorHttpException;
 
 /**
@@ -31,13 +33,11 @@ class CreateAction extends Action
      */
     public $viewAction = 'view';
 
-    public $createScenario = 'create';
-
-
     /**
      * Creates a new model.
-     * @return \yii\db\ActiveRecordInterface the model newly created
+     * @return array|mixed the model newly created
      * @throws ServerErrorHttpException if there is any error when creating the model
+     * @throws InvalidConfigException
      */
     public function run()
     {
@@ -45,9 +45,11 @@ class CreateAction extends Action
             call_user_func($this->checkAccess, $this->id);
         }
 
-        /* @var $model \yii\db\ActiveRecord */
-        $model = new $this->modelClass([
-            'scenario' => $this->createScenario,
+        /* @var $modelClass Page */
+        $modelClass = $this->modelClass;
+        /* @var $model Page */
+        $model = new $modelClass([
+            'scenario' => $modelClass::SCENARIO_CREATE,
         ]);
 
         $model->load(Yii::$app->getRequest()->getBodyParams(), '');
