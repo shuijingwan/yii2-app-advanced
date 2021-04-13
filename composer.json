@@ -18,10 +18,10 @@
         "yiisoft/yii2": "~2.0.14",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
-        "flow/jsonpath": "^0.5.0",
         "yii2tech/ar-softdelete": "^1.0",
         "hprose/hprose-yii": "^2.0",
-        "wartron/yii2-uuid": "dev-master"
+        "wartron/yii2-uuid": "dev-master",
+        "softcreatr/jsonpath": "^0.7.3"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
